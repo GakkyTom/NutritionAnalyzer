@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		239CF09DF0D3FCEBE53D81C0 /* Pods_NutritionAnalyzer_legacy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92FCAB44E79A46673BA64514 /* Pods_NutritionAnalyzer_legacy.framework */; };
 		5C36A4CE261A1AB700E9A6D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C36A4CD261A1AB700E9A6D4 /* AppDelegate.swift */; };
 		5C36A4D0261A1AB700E9A6D4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C36A4CF261A1AB700E9A6D4 /* SceneDelegate.swift */; };
 		5C36A4D2261A1AB700E9A6D4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C36A4D1261A1AB700E9A6D4 /* ViewController.swift */; };
@@ -15,6 +16,19 @@
 		5C36A4DA261A1ABA00E9A6D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C36A4D8261A1ABA00E9A6D4 /* LaunchScreen.storyboard */; };
 		5C36A4E5261A1ABA00E9A6D4 /* NutritionAnalyzer_legacyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C36A4E4261A1ABA00E9A6D4 /* NutritionAnalyzer_legacyTests.swift */; };
 		5C36A4F0261A1ABA00E9A6D4 /* NutritionAnalyzer_legacyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C36A4EF261A1ABA00E9A6D4 /* NutritionAnalyzer_legacyUITests.swift */; };
+		5C36A501261A1B0300E9A6D4 /* nutrition_labels_fact.json in Resources */ = {isa = PBXBuildFile; fileRef = 5C36A500261A1B0300E9A6D4 /* nutrition_labels_fact.json */; };
+		5C36A506261A1B1400E9A6D4 /* Nutrition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C36A505261A1B1400E9A6D4 /* Nutrition.swift */; };
+		5C36A511261A1C3900E9A6D4 /* NutritionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C36A510261A1C3900E9A6D4 /* NutritionModel.swift */; };
+		5C36A51E261B570E00E9A6D4 /* NutritionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C36A51D261B570E00E9A6D4 /* NutritionTableViewCell.xib */; };
+		5C36A526261B575F00E9A6D4 /* NutritionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C36A525261B575F00E9A6D4 /* NutritionTableViewCell.swift */; };
+		5C36A52E261B5DEE00E9A6D4 /* NutritionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C36A52D261B5DEE00E9A6D4 /* NutritionDetailViewController.swift */; };
+		5C36A536261B5E0100E9A6D4 /* NutritionDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C36A535261B5E0100E9A6D4 /* NutritionDetail.storyboard */; };
+		5CBDA74C261E009900CF1028 /* UserPFC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBDA74B261E009900CF1028 /* UserPFC.swift */; };
+		5CBDA751261E01BC00CF1028 /* DatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBDA750261E01BC00CF1028 /* DatabaseHelper.swift */; };
+		5CCCFAA1261DFB4900E2E641 /* UserData.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CCCFAA0261DFB4900E2E641 /* UserData.storyboard */; };
+		5CCCFAA6261DFB5500E2E641 /* UserDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCCFAA5261DFB5500E2E641 /* UserDataViewController.swift */; };
+		615ED13EA075A66BADC35BE0 /* Pods_NutritionAnalyzer_legacy_NutritionAnalyzer_legacyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B4441E18D279C76287B08AD /* Pods_NutritionAnalyzer_legacy_NutritionAnalyzer_legacyUITests.framework */; };
+		779946A80FCFC0E2F76461C7 /* Pods_NutritionAnalyzer_legacyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE1E17C8DDF5A21AFAAB4788 /* Pods_NutritionAnalyzer_legacyTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +49,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1F61EBAB8F84224D122AB864 /* Pods-NutritionAnalyzer_legacy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NutritionAnalyzer_legacy.release.xcconfig"; path = "Target Support Files/Pods-NutritionAnalyzer_legacy/Pods-NutritionAnalyzer_legacy.release.xcconfig"; sourceTree = "<group>"; };
+		24F26239DE404AAE7CAD79FE /* Pods-NutritionAnalyzer_legacy-NutritionAnalyzer_legacyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NutritionAnalyzer_legacy-NutritionAnalyzer_legacyUITests.release.xcconfig"; path = "Target Support Files/Pods-NutritionAnalyzer_legacy-NutritionAnalyzer_legacyUITests/Pods-NutritionAnalyzer_legacy-NutritionAnalyzer_legacyUITests.release.xcconfig"; sourceTree = "<group>"; };
+		4B4441E18D279C76287B08AD /* Pods_NutritionAnalyzer_legacy_NutritionAnalyzer_legacyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NutritionAnalyzer_legacy_NutritionAnalyzer_legacyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4BBA229D07E53E001C35AE20 /* Pods-NutritionAnalyzer_legacy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NutritionAnalyzer_legacy.debug.xcconfig"; path = "Target Support Files/Pods-NutritionAnalyzer_legacy/Pods-NutritionAnalyzer_legacy.debug.xcconfig"; sourceTree = "<group>"; };
 		5C36A4CA261A1AB700E9A6D4 /* NutritionAnalyzer_legacy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NutritionAnalyzer_legacy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C36A4CD261A1AB700E9A6D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5C36A4CF261A1AB700E9A6D4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +67,22 @@
 		5C36A4EB261A1ABA00E9A6D4 /* NutritionAnalyzer_legacyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NutritionAnalyzer_legacyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C36A4EF261A1ABA00E9A6D4 /* NutritionAnalyzer_legacyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionAnalyzer_legacyUITests.swift; sourceTree = "<group>"; };
 		5C36A4F1261A1ABA00E9A6D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5C36A500261A1B0300E9A6D4 /* nutrition_labels_fact.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = nutrition_labels_fact.json; sourceTree = "<group>"; };
+		5C36A505261A1B1400E9A6D4 /* Nutrition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nutrition.swift; sourceTree = "<group>"; };
+		5C36A510261A1C3900E9A6D4 /* NutritionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionModel.swift; sourceTree = "<group>"; };
+		5C36A51D261B570E00E9A6D4 /* NutritionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NutritionTableViewCell.xib; sourceTree = "<group>"; };
+		5C36A525261B575F00E9A6D4 /* NutritionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionTableViewCell.swift; sourceTree = "<group>"; };
+		5C36A52D261B5DEE00E9A6D4 /* NutritionDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionDetailViewController.swift; sourceTree = "<group>"; };
+		5C36A535261B5E0100E9A6D4 /* NutritionDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NutritionDetail.storyboard; sourceTree = "<group>"; };
+		5CBDA74B261E009900CF1028 /* UserPFC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPFC.swift; sourceTree = "<group>"; };
+		5CBDA750261E01BC00CF1028 /* DatabaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseHelper.swift; sourceTree = "<group>"; };
+		5CCCFAA0261DFB4900E2E641 /* UserData.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserData.storyboard; sourceTree = "<group>"; };
+		5CCCFAA5261DFB5500E2E641 /* UserDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataViewController.swift; sourceTree = "<group>"; };
+		6102E7F7BC378816928E2FDB /* Pods-NutritionAnalyzer_legacy-NutritionAnalyzer_legacyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NutritionAnalyzer_legacy-NutritionAnalyzer_legacyUITests.debug.xcconfig"; path = "Target Support Files/Pods-NutritionAnalyzer_legacy-NutritionAnalyzer_legacyUITests/Pods-NutritionAnalyzer_legacy-NutritionAnalyzer_legacyUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		92FCAB44E79A46673BA64514 /* Pods_NutritionAnalyzer_legacy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NutritionAnalyzer_legacy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3DDC62E8C546CC85D8184C8 /* Pods-NutritionAnalyzer_legacyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NutritionAnalyzer_legacyTests.debug.xcconfig"; path = "Target Support Files/Pods-NutritionAnalyzer_legacyTests/Pods-NutritionAnalyzer_legacyTests.debug.xcconfig"; sourceTree = "<group>"; };
+		DE1E17C8DDF5A21AFAAB4788 /* Pods_NutritionAnalyzer_legacyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NutritionAnalyzer_legacyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2A8B656CEED6CEE557F9A3E /* Pods-NutritionAnalyzer_legacyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NutritionAnalyzer_legacyTests.release.xcconfig"; path = "Target Support Files/Pods-NutritionAnalyzer_legacyTests/Pods-NutritionAnalyzer_legacyTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				239CF09DF0D3FCEBE53D81C0 /* Pods_NutritionAnalyzer_legacy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				779946A80FCFC0E2F76461C7 /* Pods_NutritionAnalyzer_legacyTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +106,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				615ED13EA075A66BADC35BE0 /* Pods_NutritionAnalyzer_legacy_NutritionAnalyzer_legacyUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		05B6695D7F15622816978437 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				92FCAB44E79A46673BA64514 /* Pods_NutritionAnalyzer_legacy.framework */,
+				4B4441E18D279C76287B08AD /* Pods_NutritionAnalyzer_legacy_NutritionAnalyzer_legacyUITests.framework */,
+				DE1E17C8DDF5A21AFAAB4788 /* Pods_NutritionAnalyzer_legacyTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5C36A4C1261A1AB700E9A6D4 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +130,8 @@
 				5C36A4E3261A1ABA00E9A6D4 /* NutritionAnalyzer_legacyTests */,
 				5C36A4EE261A1ABA00E9A6D4 /* NutritionAnalyzer_legacyUITests */,
 				5C36A4CB261A1AB700E9A6D4 /* Products */,
+				E95BDAA40482574DBD2F5642 /* Pods */,
+				05B6695D7F15622816978437 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,13 +148,15 @@
 		5C36A4CC261A1AB700E9A6D4 /* NutritionAnalyzer_legacy */ = {
 			isa = PBXGroup;
 			children = (
+				5C36A500261A1B0300E9A6D4 /* nutrition_labels_fact.json */,
+				5CBDA750261E01BC00CF1028 /* DatabaseHelper.swift */,
+				5C36A4DB261A1ABA00E9A6D4 /* Info.plist */,
 				5C36A4CD261A1AB700E9A6D4 /* AppDelegate.swift */,
 				5C36A4CF261A1AB700E9A6D4 /* SceneDelegate.swift */,
-				5C36A4D1261A1AB700E9A6D4 /* ViewController.swift */,
-				5C36A4D3261A1AB700E9A6D4 /* Main.storyboard */,
 				5C36A4D6261A1ABA00E9A6D4 /* Assets.xcassets */,
-				5C36A4D8261A1ABA00E9A6D4 /* LaunchScreen.storyboard */,
-				5C36A4DB261A1ABA00E9A6D4 /* Info.plist */,
+				5C36A52C261B5DC200E9A6D4 /* Entity */,
+				5C36A52B261B5DBA00E9A6D4 /* Model */,
+				5C36A52A261B5DA100E9A6D4 /* View */,
 			);
 			path = NutritionAnalyzer_legacy;
 			sourceTree = "<group>";
@@ -128,6 +179,52 @@
 			path = NutritionAnalyzer_legacyUITests;
 			sourceTree = "<group>";
 		};
+		5C36A52A261B5DA100E9A6D4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5C36A525261B575F00E9A6D4 /* NutritionTableViewCell.swift */,
+				5C36A4D1261A1AB700E9A6D4 /* ViewController.swift */,
+				5C36A51D261B570E00E9A6D4 /* NutritionTableViewCell.xib */,
+				5CCCFAA5261DFB5500E2E641 /* UserDataViewController.swift */,
+				5C36A4D8261A1ABA00E9A6D4 /* LaunchScreen.storyboard */,
+				5CCCFAA0261DFB4900E2E641 /* UserData.storyboard */,
+				5C36A535261B5E0100E9A6D4 /* NutritionDetail.storyboard */,
+				5C36A4D3261A1AB700E9A6D4 /* Main.storyboard */,
+				5C36A52D261B5DEE00E9A6D4 /* NutritionDetailViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5C36A52B261B5DBA00E9A6D4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5C36A510261A1C3900E9A6D4 /* NutritionModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5C36A52C261B5DC200E9A6D4 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				5C36A505261A1B1400E9A6D4 /* Nutrition.swift */,
+				5CBDA74B261E009900CF1028 /* UserPFC.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		E95BDAA40482574DBD2F5642 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4BBA229D07E53E001C35AE20 /* Pods-NutritionAnalyzer_legacy.debug.xcconfig */,
+				1F61EBAB8F84224D122AB864 /* Pods-NutritionAnalyzer_legacy.release.xcconfig */,
+				6102E7F7BC378816928E2FDB /* Pods-NutritionAnalyzer_legacy-NutritionAnalyzer_legacyUITests.debug.xcconfig */,
+				24F26239DE404AAE7CAD79FE /* Pods-NutritionAnalyzer_legacy-NutritionAnalyzer_legacyUITests.release.xcconfig */,
+				C3DDC62E8C546CC85D8184C8 /* Pods-NutritionAnalyzer_legacyTests.debug.xcconfig */,
+				E2A8B656CEED6CEE557F9A3E /* Pods-NutritionAnalyzer_legacyTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +232,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5C36A4F4261A1ABA00E9A6D4 /* Build configuration list for PBXNativeTarget "NutritionAnalyzer_legacy" */;
 			buildPhases = (
+				D6B667D2D8686E7428D66F38 /* [CP] Check Pods Manifest.lock */,
 				5C36A4C6261A1AB700E9A6D4 /* Sources */,
 				5C36A4C7261A1AB700E9A6D4 /* Frameworks */,
 				5C36A4C8261A1AB700E9A6D4 /* Resources */,
+				FBAA27D8F00F8164170F791B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -152,6 +251,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5C36A4F7261A1ABA00E9A6D4 /* Build configuration list for PBXNativeTarget "NutritionAnalyzer_legacyTests" */;
 			buildPhases = (
+				F3076C842C472ADF69FB7456 /* [CP] Check Pods Manifest.lock */,
 				5C36A4DC261A1ABA00E9A6D4 /* Sources */,
 				5C36A4DD261A1ABA00E9A6D4 /* Frameworks */,
 				5C36A4DE261A1ABA00E9A6D4 /* Resources */,
@@ -170,9 +270,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5C36A4FA261A1ABA00E9A6D4 /* Build configuration list for PBXNativeTarget "NutritionAnalyzer_legacyUITests" */;
 			buildPhases = (
+				1F325500F07131FF40EEB8DB /* [CP] Check Pods Manifest.lock */,
 				5C36A4E7261A1ABA00E9A6D4 /* Sources */,
 				5C36A4E8261A1ABA00E9A6D4 /* Frameworks */,
 				5C36A4E9261A1ABA00E9A6D4 /* Resources */,
+				43431E713890EFBC74786BD7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -232,7 +334,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C36A4DA261A1ABA00E9A6D4 /* LaunchScreen.storyboard in Resources */,
+				5CCCFAA1261DFB4900E2E641 /* UserData.storyboard in Resources */,
+				5C36A51E261B570E00E9A6D4 /* NutritionTableViewCell.xib in Resources */,
+				5C36A501261A1B0300E9A6D4 /* nutrition_labels_fact.json in Resources */,
 				5C36A4D7261A1ABA00E9A6D4 /* Assets.xcassets in Resources */,
+				5C36A536261B5E0100E9A6D4 /* NutritionDetail.storyboard in Resources */,
 				5C36A4D5261A1AB700E9A6D4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -253,14 +359,124 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1F325500F07131FF40EEB8DB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NutritionAnalyzer_legacy-NutritionAnalyzer_legacyUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		43431E713890EFBC74786BD7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NutritionAnalyzer_legacy-NutritionAnalyzer_legacyUITests/Pods-NutritionAnalyzer_legacy-NutritionAnalyzer_legacyUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NutritionAnalyzer_legacy-NutritionAnalyzer_legacyUITests/Pods-NutritionAnalyzer_legacy-NutritionAnalyzer_legacyUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NutritionAnalyzer_legacy-NutritionAnalyzer_legacyUITests/Pods-NutritionAnalyzer_legacy-NutritionAnalyzer_legacyUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D6B667D2D8686E7428D66F38 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NutritionAnalyzer_legacy-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F3076C842C472ADF69FB7456 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NutritionAnalyzer_legacyTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FBAA27D8F00F8164170F791B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NutritionAnalyzer_legacy/Pods-NutritionAnalyzer_legacy-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NutritionAnalyzer_legacy/Pods-NutritionAnalyzer_legacy-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NutritionAnalyzer_legacy/Pods-NutritionAnalyzer_legacy-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5C36A4C6261A1AB700E9A6D4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				5C36A4D2261A1AB700E9A6D4 /* ViewController.swift in Sources */,
+				5C36A52E261B5DEE00E9A6D4 /* NutritionDetailViewController.swift in Sources */,
+				5C36A511261A1C3900E9A6D4 /* NutritionModel.swift in Sources */,
+				5C36A506261A1B1400E9A6D4 /* Nutrition.swift in Sources */,
 				5C36A4CE261A1AB700E9A6D4 /* AppDelegate.swift in Sources */,
+				5C36A526261B575F00E9A6D4 /* NutritionTableViewCell.swift in Sources */,
+				5CBDA751261E01BC00CF1028 /* DatabaseHelper.swift in Sources */,
 				5C36A4D0261A1AB700E9A6D4 /* SceneDelegate.swift in Sources */,
+				5CBDA74C261E009900CF1028 /* UserPFC.swift in Sources */,
+				5CCCFAA6261DFB5500E2E641 /* UserDataViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,6 +649,7 @@
 		};
 		5C36A4F5261A1ABA00E9A6D4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4BBA229D07E53E001C35AE20 /* Pods-NutritionAnalyzer_legacy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -452,6 +669,7 @@
 		};
 		5C36A4F6261A1ABA00E9A6D4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1F61EBAB8F84224D122AB864 /* Pods-NutritionAnalyzer_legacy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -471,6 +689,7 @@
 		};
 		5C36A4F8261A1ABA00E9A6D4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C3DDC62E8C546CC85D8184C8 /* Pods-NutritionAnalyzer_legacyTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -493,6 +712,7 @@
 		};
 		5C36A4F9261A1ABA00E9A6D4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E2A8B656CEED6CEE557F9A3E /* Pods-NutritionAnalyzer_legacyTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -515,6 +735,7 @@
 		};
 		5C36A4FB261A1ABA00E9A6D4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6102E7F7BC378816928E2FDB /* Pods-NutritionAnalyzer_legacy-NutritionAnalyzer_legacyUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -535,6 +756,7 @@
 		};
 		5C36A4FC261A1ABA00E9A6D4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24F26239DE404AAE7CAD79FE /* Pods-NutritionAnalyzer_legacy-NutritionAnalyzer_legacyUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

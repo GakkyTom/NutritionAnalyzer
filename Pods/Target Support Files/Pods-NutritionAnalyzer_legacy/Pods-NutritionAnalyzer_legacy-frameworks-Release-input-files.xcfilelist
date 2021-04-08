@@ -1,0 +1,3 @@
+${PODS_ROOT}/Target Support Files/Pods-NutritionAnalyzer_legacy/Pods-NutritionAnalyzer_legacy-frameworks.sh
+${BUILT_PRODUCTS_DIR}/GRDB.swift/GRDB.framework
+${BUILT_PRODUCTS_DIR}/SQLite.swift/SQLite.framework

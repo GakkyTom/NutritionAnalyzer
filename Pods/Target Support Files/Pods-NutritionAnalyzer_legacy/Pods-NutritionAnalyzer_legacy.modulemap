@@ -1,0 +1,6 @@
+framework module Pods_NutritionAnalyzer_legacy {
+  umbrella header "Pods-NutritionAnalyzer_legacy-umbrella.h"
+
+  export *
+  module * { export * }
+}
