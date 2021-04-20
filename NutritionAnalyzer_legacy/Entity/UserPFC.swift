@@ -12,7 +12,7 @@ struct UserPFC : Codable, FetchableRecord, MutablePersistableRecord {
     var foodName: String
     var protein: Float
     var fat: Float
-    var corbon: Float
+    var carbohydrate: Float
 
     static var databaseTableName: String {
         return "tbl_user_pfc"
@@ -24,7 +24,7 @@ struct UserPFC : Codable, FetchableRecord, MutablePersistableRecord {
             t.column("foodName", .text).notNull()
             t.column("protein", .double).notNull()
             t.column("fat", .double).notNull()
-            t.column("corbon", .double).notNull()
+            t.column("carbohydrate", .double).notNull()
         })
     }
 }

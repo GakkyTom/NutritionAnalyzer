@@ -1,4 +1,7 @@
 PODS:
+  - Charts (3.6.0):
+    - Charts/Core (= 3.6.0)
+  - Charts/Core (3.6.0)
   - GRDB.swift (5.7.3):
     - GRDB.swift/standard (= 5.7.3)
   - GRDB.swift/standard (5.7.3)
@@ -7,18 +10,21 @@ PODS:
   - SQLite.swift/standard (0.12.2)
 
 DEPENDENCIES:
+  - Charts
   - GRDB.swift
   - SQLite.swift (~> 0.12.0)
 
 SPEC REPOS:
   trunk:
+    - Charts
     - GRDB.swift
     - SQLite.swift
 
 SPEC CHECKSUMS:
+  Charts: b1e3a1f5a1c9ba5394438ca3b91bd8c9076310af
   GRDB.swift: 21bf3cb0c95486d65da5e83a096d5643629163e1
   SQLite.swift: d2b4642190917051ce6bd1d49aab565fe794eea3
 
-PODFILE CHECKSUM: ac337ed4f035e6108f4a8c22490f8bb2f4f30ef3
+PODFILE CHECKSUM: 5a1e4c671a00bf9a6cd95d145209b445749eccdd
 
 COCOAPODS: 1.10.1

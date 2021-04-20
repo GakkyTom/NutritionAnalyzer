@@ -8,6 +8,7 @@ target 'NutritionAnalyzer_legacy' do
   # Pods for NutritionAnalyzer_legacy
   pod 'GRDB.swift'
   pod 'SQLite.swift', '~> 0.12.0'
+  pod 'Charts'
 
   target 'NutritionAnalyzer_legacyTests' do
     inherit! :search_paths

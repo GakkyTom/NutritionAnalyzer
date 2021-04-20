@@ -10,9 +10,37 @@ import UIKit
 
 class NutritionTableViewCell: UITableViewCell {
 
+    // Labels
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var actualLabel: UILabel!
+    @IBOutlet weak var plannedLabel: UILabel!
+    @IBOutlet weak var percentageLabel: UILabel!
 
-    func setupCell(nutrition: Nutrition) {
+    // Views
+    @IBOutlet weak var barBackgroundView: UIView!
+    @IBOutlet weak var barView: UIView!
+    @IBOutlet weak var percentageBackgroundView: UIView!
+
+    // Constraints
+    @IBOutlet weak var percentageConstraints: NSLayoutConstraint!
+    @IBOutlet weak var barBackgroundWidth: NSLayoutConstraint!
+    @IBOutlet weak var barWidth: NSLayoutConstraint!
+
+    static let cellHeight: CGFloat = 73
+
+    func setupCell(nutrition: Nutrition, actual: Double, planned: Double, percentage: Double) {
         self.titleLabel.text = nutrition.foodName
+        self.percentageLabel.text = "\((percentage * 100).description)%"
+        self.actualLabel.text = "\(actual.description)g"
+        self.plannedLabel.text = "\(planned.description)g"
+
+        setupCellAppearance()
+    }
+
+    func setupCellAppearance() {
+        self.percentageBackgroundView.layer.cornerRadius = 10
+        self.percentageBackgroundView.layer.shadowOffset = CGSize(width: 5, height: 5)
+        self.percentageBackgroundView.layer.shadowOpacity = 0.5
+
     }
 }

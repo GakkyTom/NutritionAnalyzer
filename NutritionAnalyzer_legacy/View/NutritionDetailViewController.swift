@@ -36,7 +36,7 @@ class NutritionDetailViewController: UIViewController {
         if let data = self.data {
             let model = NutritionModel()
 
-            model.add(food: data)
+            model.insert(nutrition: data)
             self.dismiss(animated: true, completion: nil)
         }
     }

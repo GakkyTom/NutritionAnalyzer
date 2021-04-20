@@ -33,47 +33,37 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uSy-sr-rhs">
-                                <rect key="frame" x="0.0" y="371" width="414" height="491"/>
+                                <rect key="frame" x="0.0" y="491" width="414" height="371"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RCh-UF-wrz">
-                                <rect key="frame" x="20" y="163" width="374" height="34"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BfG-hB-0CT" customClass="RadarChartView" customModule="Charts">
+                                <rect key="frame" x="57" y="168" width="300" height="300"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="T6b-GE-PT1"/>
+                                    <constraint firstAttribute="width" constant="300" id="aVW-5v-wzU"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wvV-Ih-hBH">
+                                <rect key="frame" x="181" y="112" width="53" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GRa-yb-emn">
-                                <rect key="frame" x="192" y="262" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Add"/>
+                                <state key="normal" title="Refresh"/>
                                 <connections>
-                                    <action selector="onTapAddButton:" destination="7DQ-bw-Tip" eventType="touchUpInside" id="xeu-OX-7DL"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TGM-0x-vdR">
-                                <rect key="frame" x="184" y="224" width="48" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Search"/>
-                                <connections>
-                                    <action selector="onTapSearchButton:" destination="7DQ-bw-Tip" eventType="touchUpInside" id="pb4-MI-fv4"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u4v-Cs-gDW">
-                                <rect key="frame" x="189" y="300" width="38" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Move"/>
-                                <connections>
-                                    <action selector="onTapMoveButton:" destination="7DQ-bw-Tip" eventType="touchUpInside" id="m7S-o6-YM0"/>
+                                    <action selector="onTapRefreshButton:" destination="7DQ-bw-Tip" eventType="touchUpInside" id="VU1-mQ-8ng"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="QBc-xa-wcY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="BfG-hB-0CT" firstAttribute="top" secondItem="QBc-xa-wcY" secondAttribute="top" constant="80" id="LNh-Ig-0oV"/>
+                            <constraint firstItem="BfG-hB-0CT" firstAttribute="centerX" secondItem="cOM-jP-0c6" secondAttribute="centerX" id="jCq-67-kXR"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Uql-oR-4SK"/>
                     <connections>
-                        <outlet property="foodTextField" destination="RCh-UF-wrz" id="hrj-GS-4PM"/>
+                        <outlet property="radarChartView" destination="BfG-hB-0CT" id="iYe-NS-kbC"/>
                         <outlet property="tableView" destination="uSy-sr-rhs" id="Cfu-fL-Z0N"/>
                     </connections>
                 </viewController>

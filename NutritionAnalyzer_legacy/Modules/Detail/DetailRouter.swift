@@ -1,0 +1,20 @@
+//
+//  DetailRouter.swift
+//  NutritionAnalyzer_legacy
+//
+//  Created by 板垣智也 on 2021/04/20.
+//
+
+import Foundation
+
+protocol DetailWireFrame {
+
+}
+
+class DetailRouter {
+
+}
+
+extension DetailRouter: DetailWireFrame {
+    
+}
