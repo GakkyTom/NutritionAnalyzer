@@ -12,7 +12,17 @@ protocol HomePresentation: AnyObject {
 }
 
 class HomePresenter {
+    private weak var view: HomeView?
+    private let router: HomeWireframe
+    private let staticsRepositoryInteractor: StaticsRepositoryUsecase
 
+    init(view: HomeView,
+         router: HomeWireframe,
+         staticsRepositoryInteractor: StaticsRepositoryUsecase) {
+        self.view = view
+        self.router = router
+        self.staticsRepositoryInteractor = staticsRepositoryInteractor
+    }
 }
 
 extension HomePresenter: HomePresentation {

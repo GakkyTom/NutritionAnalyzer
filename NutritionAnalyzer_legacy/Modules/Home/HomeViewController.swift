@@ -11,8 +11,14 @@ protocol HomeView: AnyObject { }
 
 class HomeViewController: UIViewController {
 
+    var presenter: HomePresentation!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
     }
+}
+
+extension HomeViewController: HomeView {
+    
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol SearchWireFrame: AnyObject {
+protocol SearchWireframe: AnyObject {
 
 }
 
@@ -15,6 +15,6 @@ class SearchRouter {
 
 }
 
-extension SearchRouter: SearchWireFrame {
-    
+extension SearchRouter: SearchWireframe {
+
 }

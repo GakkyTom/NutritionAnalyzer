@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol SearchView {
+
+}
+
 class SearchViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -14,4 +18,8 @@ class SearchViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+}
+
+extension SearchViewController: SearchView {
+    
 }

@@ -37,6 +37,7 @@
 		5CBA1789262EDDD0007B3B40 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CBA1787262EDDD0007B3B40 /* DetailViewController.xib */; };
 		5CBA1791262EDEB7007B3B40 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBA1790262EDEB7007B3B40 /* DetailPresenter.swift */; };
 		5CBA1796262EDEC4007B3B40 /* DetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBA1795262EDEC4007B3B40 /* DetailRouter.swift */; };
+		5CBA179E262EE20B007B3B40 /* StaticsRepositoryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBA179D262EE20B007B3B40 /* StaticsRepositoryInteractor.swift */; };
 		5CBDA74C261E009900CF1028 /* UserPFC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBDA74B261E009900CF1028 /* UserPFC.swift */; };
 		5CBDA751261E01BC00CF1028 /* DatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBDA750261E01BC00CF1028 /* DatabaseHelper.swift */; };
 		5CCCFAA1261DFB4900E2E641 /* UserData.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CCCFAA0261DFB4900E2E641 /* UserData.storyboard */; };
@@ -102,6 +103,7 @@
 		5CBA1787262EDDD0007B3B40 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		5CBA1790262EDEB7007B3B40 /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
 		5CBA1795262EDEC4007B3B40 /* DetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRouter.swift; sourceTree = "<group>"; };
+		5CBA179D262EE20B007B3B40 /* StaticsRepositoryInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticsRepositoryInteractor.swift; sourceTree = "<group>"; };
 		5CBDA74B261E009900CF1028 /* UserPFC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPFC.swift; sourceTree = "<group>"; };
 		5CBDA750261E01BC00CF1028 /* DatabaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseHelper.swift; sourceTree = "<group>"; };
 		5CCCFAA0261DFB4900E2E641 /* UserData.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserData.storyboard; sourceTree = "<group>"; };
@@ -331,6 +333,7 @@
 		5CAA2FAE262ED9E000547E30 /* StaticsRepository */ = {
 			isa = PBXGroup;
 			children = (
+				5CBA179D262EE20B007B3B40 /* StaticsRepositoryInteractor.swift */,
 			);
 			path = StaticsRepository;
 			sourceTree = "<group>";
@@ -608,6 +611,7 @@
 				5CBA1772262EDC55007B3B40 /* SearchRouter.swift in Sources */,
 				5CBA176D262EDB83007B3B40 /* HomeRouter.swift in Sources */,
 				5C36A506261A1B1400E9A6D4 /* Nutrition.swift in Sources */,
+				5CBA179E262EE20B007B3B40 /* StaticsRepositoryInteractor.swift in Sources */,
 				5C36A4CE261A1AB700E9A6D4 /* AppDelegate.swift in Sources */,
 				5C36A526261B575F00E9A6D4 /* NutritionTableViewCell.swift in Sources */,
 				5CBA1768262EDB76007B3B40 /* HomePresenter.swift in Sources */,

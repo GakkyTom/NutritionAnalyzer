@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol DetailWireFrame {
+protocol DetailWireframe {
 
 }
 
@@ -15,6 +15,6 @@ class DetailRouter {
 
 }
 
-extension DetailRouter: DetailWireFrame {
-    
+extension DetailRouter: DetailWireframe {
+
 }
