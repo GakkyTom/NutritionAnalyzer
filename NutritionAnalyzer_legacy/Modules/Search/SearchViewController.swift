@@ -23,10 +23,7 @@ class SearchViewController: UIViewController, UIGestureRecognizerDelegate {
     private var tapGestureRecognizer : UITapGestureRecognizer!
 
     @IBAction func searchButtonTapped(_ sender: Any) {
-        if let foodName = self.searchBoxTextField.text {
-            self.searchBoxTextField.resignFirstResponder()
-            presenter.searchButtonTapped(foodName)
-        }
+        searchFoods()
     }
 
     override func viewDidLoad() {
@@ -36,6 +33,13 @@ class SearchViewController: UIViewController, UIGestureRecognizerDelegate {
         setupGestureRecognizer()
         setupTextField()
         presenter.viewDidLoad()
+    }
+
+    private func searchFoods() {
+        if let foodName = self.searchBoxTextField.text {
+            self.searchBoxTextField.resignFirstResponder()
+            presenter.searchButtonTapped(foodName)
+        }
     }
 
     private func setupTextField() {
@@ -69,6 +73,9 @@ extension SearchViewController: SearchView {
 extension SearchViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.searchBoxTextField.resignFirstResponder()
+        self.searchFoods()
+
+        return true
     }
 
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
