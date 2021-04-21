@@ -27,6 +27,9 @@ class SearchViewController: UIViewController {
         presenter.viewDidLoad()
     }
 
+    private func setupAppearance() {
+    }
+
     private func setupTableView() {
         self.tableView.delegate = self
         self.tableView.dataSource = self
@@ -55,6 +58,8 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         presenter.didSelectRow(food: data[indexPath.row])
+
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

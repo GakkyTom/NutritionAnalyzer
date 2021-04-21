@@ -22,6 +22,8 @@ class SearchRouter {
 
     static func assembleModeuls() -> UIViewController {
         let view = SearchViewController()
+        view.tabBarItem = UITabBarItem(title: "Search", image: UIImage(named: "search"), selectedImage: UIImage(named: "search"))
+
         let router = SearchRouter(viewController: view)
         let searchFoodInteractor = SearchFoodInteractor()
 
