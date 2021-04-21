@@ -26,8 +26,9 @@ class SearchRouter {
 
         let router = SearchRouter(viewController: view)
         let searchFoodInteractor = SearchFoodInteractor()
+        let searchModel = NutritionModel()
 
-        let presenter = SearchPresenter(view: view, router: router, searchFoodInteractor: searchFoodInteractor)
+        let presenter = SearchPresenter(view: view, router: router, searchFoodInteractor: searchFoodInteractor, searchModel: searchModel)
 
         view.presenter = presenter
 
@@ -40,6 +41,6 @@ extension SearchRouter: SearchWireframe {
         let detailView = DetailRouter.assembleModules(food: food)
 
         // ここで、init時に受け取ったViewControllerを使う
-        viewController.navigationController?.pushViewController(detailView, animated: true)
+        viewController.present(detailView, animated: true, completion: nil)
     }
 }

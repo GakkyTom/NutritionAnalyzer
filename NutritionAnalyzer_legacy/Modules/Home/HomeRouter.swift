@@ -22,7 +22,7 @@ class HomeRouter {
     static func assembleModules() -> UIViewController {
         let view = HomeViewController()
         view.tabBarItem = UITabBarItem(title: "home", image: UIImage(named: "home"), selectedImage: UIImage(named: "home"))
-        
+
         let router = HomeRouter(viewController: view)
         let nutritionStaticsInteractor = NutritionStaticsInteractor()
 

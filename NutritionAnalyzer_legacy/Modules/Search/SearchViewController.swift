@@ -11,23 +11,40 @@ protocol SearchView: AnyObject {
     func updateTableView(data: [Nutrition])
 }
 
-class SearchViewController: UIViewController {
+class SearchViewController: UIViewController, UIGestureRecognizerDelegate {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchBoxTextField: UITextField!
 
     var presenter: SearchPresentation!
 
     var data: [Nutrition] = []
     let cellIdentifier = "NutritionTableViewCell"
+    private var tapGestureRecognizer : UITapGestureRecognizer!
+
+    @IBAction func searchButtonTapped(_ sender: Any) {
+        if let foodName = self.searchBoxTextField.text {
+            self.searchBoxTextField.resignFirstResponder()
+            presenter.searchButtonTapped(foodName)
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupTableView()
+        setGestureRecognizer()
+        setupAppearance()
         presenter.viewDidLoad()
     }
 
     private func setupAppearance() {
+        self.searchBoxTextField.delegate = self
+    }
+
+    private func setGestureRecognizer() {
+        self.tapGestureRecognizer = UITapGestureRecognizer.init(target: self, action: #selector(self.gestureRecognizerAction))
+        self.tapGestureRecognizer.delegate = self
     }
 
     private func setupTableView() {
@@ -35,12 +52,32 @@ class SearchViewController: UIViewController {
         self.tableView.dataSource = self
         self.tableView.register(UINib(nibName: cellIdentifier, bundle: nil), forCellReuseIdentifier: cellIdentifier)
     }
+
+    @objc func gestureRecognizerAction(_ sender: UITapGestureRecognizer){
+        self.searchBoxTextField.resignFirstResponder()
+    }
 }
 
 extension SearchViewController: SearchView {
     func updateTableView(data: [Nutrition]) {
         self.data = data
         tableView.reloadData()
+    }
+}
+
+extension SearchViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.searchBoxTextField.resignFirstResponder()
+    }
+
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        self.view.addGestureRecognizer(tapGestureRecognizer)
+        return true
+    }
+
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        self.view.removeGestureRecognizer(tapGestureRecognizer)
+        return true
     }
 }
 

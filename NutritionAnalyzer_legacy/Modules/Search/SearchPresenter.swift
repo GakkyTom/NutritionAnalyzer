@@ -9,6 +9,7 @@ import Foundation
 
 protocol SearchPresentation: AnyObject {
     func viewDidLoad()
+    func searchButtonTapped(_ foodName: String)
     func didSelectRow(food: Nutrition)
 }
 
@@ -16,22 +17,29 @@ class SearchPresenter {
     private weak var view: SearchView?
     private let router: SearchWireframe
     private let searchFoodInteractor: SearchFoodInteractor
+    private let searchModel: NutritionModel
 
     init(view: SearchView,
          router: SearchWireframe,
-         searchFoodInteractor: SearchFoodInteractor) {
+         searchFoodInteractor: SearchFoodInteractor,
+         searchModel: NutritionModel) {
         self.view = view
         self.router = router
         self.searchFoodInteractor = searchFoodInteractor
+        self.searchModel = searchModel
     }
 }
 
 extension SearchPresenter: SearchPresentation {
     func viewDidLoad() {
-        let model = NutritionModel()
-        model.initializeDB()
+        searchModel.initializeDB()
 
-        view?.updateTableView(data: model.dataSource)
+        view?.updateTableView(data: searchModel.dataSource)
+    }
+
+    func searchButtonTapped(_ foodName: String) {
+        let data = searchModel.getFoodBy(foodName)
+        view?.updateTableView(data: data)
     }
 
     func didSelectRow(food: Nutrition) {
