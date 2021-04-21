@@ -22,12 +22,12 @@ class HomeRouter {
     static func assembleModules() -> UIViewController {
         let view = HomeViewController()
         let router = HomeRouter(viewController: view)
-        let staticsRepositoryInteractor = StaticsRepsitoryInteractor()
+        let nutritionStaticsInteractor = NutritionStaticsInteractor()
 
         let presenter = HomePresenter(
             view: view,
             router: router,
-            staticsRepositoryInteractor: staticsRepositoryInteractor
+            nutritionStaticsInteractor: nutritionStaticsInteractor
         )
 
         view.presenter = presenter

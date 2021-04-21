@@ -10,6 +10,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailViewController" customModule="NutritionAnalyzer_legacy" customModuleProvider="target">
             <connections>
+                <outlet property="carbohydrateLabel" destination="aJE-5n-9v3" id="OA2-sy-YfK"/>
+                <outlet property="carbohydrateQtLabel" destination="N2f-cH-iqX" id="mJG-6o-uZq"/>
+                <outlet property="fatLabel" destination="psP-4u-Xu4" id="Ej6-JC-HIG"/>
+                <outlet property="fatQtLabel" destination="K2t-PY-9NB" id="NUV-iM-EaQ"/>
+                <outlet property="proteinLabel" destination="uYg-G4-hON" id="cOZ-Wo-Ieg"/>
+                <outlet property="proteinQtLabel" destination="M1P-fl-BG4" id="bYb-IA-h8T"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,9 +24,56 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uYg-G4-hON">
-                    <rect key="frame" x="176" y="256" width="44" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Protein" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uYg-G4-hON" userLabel="Protein Label">
+                    <rect key="frame" x="20" y="124" width="54" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="psP-4u-Xu4" userLabel="Fat Label">
+                    <rect key="frame" x="20" y="195" width="24" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Carbohydrate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aJE-5n-9v3" userLabel="Carbohydrate Label">
+                    <rect key="frame" x="20" y="266" width="104" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M1P-fl-BG4" userLabel="Protein Quantity">
+                    <rect key="frame" x="164" y="124" width="24" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K2t-PY-9NB" userLabel="Fat Quantity">
+                    <rect key="frame" x="164" y="195" width="24" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N2f-cH-iqX" userLabel="Carbohydrate Quantity">
+                    <rect key="frame" x="164" y="266" width="24" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="g" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xim-XY-o8w">
+                    <rect key="frame" x="218" y="124" width="10" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="g" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yGd-jt-uLh">
+                    <rect key="frame" x="218" y="195" width="10" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="g" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KGh-kv-A5s">
+                    <rect key="frame" x="218" y="266" width="10" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -28,7 +81,27 @@
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-            <point key="canvasLocation" x="-19" y="72"/>
+            <constraints>
+                <constraint firstItem="xim-XY-o8w" firstAttribute="leading" secondItem="M1P-fl-BG4" secondAttribute="trailing" constant="30" id="0z0-a5-eT7"/>
+                <constraint firstItem="N2f-cH-iqX" firstAttribute="top" secondItem="K2t-PY-9NB" secondAttribute="bottom" constant="50" id="12O-IH-Kff"/>
+                <constraint firstItem="psP-4u-Xu4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="2rb-WO-Uy0"/>
+                <constraint firstItem="yGd-jt-uLh" firstAttribute="leading" secondItem="K2t-PY-9NB" secondAttribute="trailing" constant="30" id="4af-RE-dTc"/>
+                <constraint firstItem="KGh-kv-A5s" firstAttribute="top" secondItem="yGd-jt-uLh" secondAttribute="bottom" constant="50" id="A2m-zR-b7q"/>
+                <constraint firstItem="aJE-5n-9v3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="FqV-6F-MYO"/>
+                <constraint firstItem="K2t-PY-9NB" firstAttribute="top" secondItem="M1P-fl-BG4" secondAttribute="bottom" constant="50" id="Ikj-20-yU5"/>
+                <constraint firstItem="psP-4u-Xu4" firstAttribute="top" secondItem="uYg-G4-hON" secondAttribute="bottom" constant="50" id="Pxf-X3-t9g"/>
+                <constraint firstItem="uYg-G4-hON" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="80" id="QR0-bY-4GT"/>
+                <constraint firstItem="KGh-kv-A5s" firstAttribute="leading" secondItem="N2f-cH-iqX" secondAttribute="trailing" constant="30" id="aFy-ro-LSf"/>
+                <constraint firstItem="N2f-cH-iqX" firstAttribute="leading" secondItem="K2t-PY-9NB" secondAttribute="leading" id="cm8-Fb-nYp"/>
+                <constraint firstItem="uYg-G4-hON" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="gTW-JJ-kAo"/>
+                <constraint firstItem="yGd-jt-uLh" firstAttribute="top" secondItem="xim-XY-o8w" secondAttribute="bottom" constant="50" id="hO4-eq-p9c"/>
+                <constraint firstItem="xim-XY-o8w" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="80" id="iVg-D1-MDc"/>
+                <constraint firstItem="K2t-PY-9NB" firstAttribute="leading" secondItem="M1P-fl-BG4" secondAttribute="leading" id="kzS-ac-qSz"/>
+                <constraint firstItem="M1P-fl-BG4" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="80" id="okH-U5-5QI"/>
+                <constraint firstItem="aJE-5n-9v3" firstAttribute="top" secondItem="psP-4u-Xu4" secondAttribute="bottom" constant="50" id="sw4-ii-j0E"/>
+                <constraint firstItem="M1P-fl-BG4" firstAttribute="leading" secondItem="uYg-G4-hON" secondAttribute="trailing" constant="90" id="x48-LA-P4x"/>
+            </constraints>
+            <point key="canvasLocation" x="-20.289855072463769" y="71.651785714285708"/>
         </view>
     </objects>
     <resources>

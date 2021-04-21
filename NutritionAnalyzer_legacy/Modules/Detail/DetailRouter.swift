@@ -19,13 +19,14 @@ class DetailRouter {
     }
 
     // DI
-    static func assembleModules() -> UIViewController {
+    static func assembleModules(food: Nutrition) -> UIViewController {
         let view = DetailViewController()
         let router = DetailRouter(viewController: view)
 
         let presenter = DetailPresenter(
             view: view,
-            router: router
+            router: router,
+            food: food
         )
 
         view.presenter = presenter

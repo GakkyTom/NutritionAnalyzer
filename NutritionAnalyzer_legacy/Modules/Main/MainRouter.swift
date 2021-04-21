@@ -37,7 +37,7 @@ class MainRouter {
     static func getViewControllers() -> [UIViewController] {
         return [
             HomeRouter.assembleModules(),
-            DetailRouter.assembleModules()
+            SearchRouter.assembleModeuls()
         ].map { UINavigationController(rootViewController: $0) }
     }
 }

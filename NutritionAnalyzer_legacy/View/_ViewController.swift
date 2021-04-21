@@ -7,7 +7,9 @@
 
 import UIKit
 import Charts
-
+//
+// DEPRECATED
+//
 class ViewController: UIViewController {
 
     @IBOutlet weak var radarChartView: RadarChartView!

@@ -14,14 +14,14 @@ protocol HomePresentation: AnyObject {
 class HomePresenter {
     private weak var view: HomeView?
     private let router: HomeWireframe
-    private let staticsRepositoryInteractor: StaticsRepositoryUsecase
+    private let nutritionStaticsInteractor: NutritionStaticsUsecase
 
     init(view: HomeView,
          router: HomeWireframe,
-         staticsRepositoryInteractor: StaticsRepositoryUsecase) {
+         nutritionStaticsInteractor: NutritionStaticsUsecase) {
         self.view = view
         self.router = router
-        self.staticsRepositoryInteractor = staticsRepositoryInteractor
+        self.nutritionStaticsInteractor = nutritionStaticsInteractor
     }
 }
 

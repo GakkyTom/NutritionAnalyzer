@@ -8,10 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		239CF09DF0D3FCEBE53D81C0 /* Pods_NutritionAnalyzer_legacy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92FCAB44E79A46673BA64514 /* Pods_NutritionAnalyzer_legacy.framework */; };
+		5C16EBFE26305E07008DCC78 /* SearchFoodInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C16EBFD26305E07008DCC78 /* SearchFoodInteractor.swift */; };
 		5C36A4CE261A1AB700E9A6D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C36A4CD261A1AB700E9A6D4 /* AppDelegate.swift */; };
 		5C36A4D0261A1AB700E9A6D4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C36A4CF261A1AB700E9A6D4 /* SceneDelegate.swift */; };
-		5C36A4D2261A1AB700E9A6D4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C36A4D1261A1AB700E9A6D4 /* ViewController.swift */; };
-		5C36A4D5261A1AB700E9A6D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C36A4D3261A1AB700E9A6D4 /* Main.storyboard */; };
+		5C36A4D2261A1AB700E9A6D4 /* _ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C36A4D1261A1AB700E9A6D4 /* _ViewController.swift */; };
 		5C36A4D7261A1ABA00E9A6D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C36A4D6261A1ABA00E9A6D4 /* Assets.xcassets */; };
 		5C36A4DA261A1ABA00E9A6D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C36A4D8261A1ABA00E9A6D4 /* LaunchScreen.storyboard */; };
 		5C36A4E5261A1ABA00E9A6D4 /* NutritionAnalyzer_legacyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C36A4E4261A1ABA00E9A6D4 /* NutritionAnalyzer_legacyTests.swift */; };
@@ -21,8 +21,7 @@
 		5C36A511261A1C3900E9A6D4 /* NutritionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C36A510261A1C3900E9A6D4 /* NutritionModel.swift */; };
 		5C36A51E261B570E00E9A6D4 /* NutritionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C36A51D261B570E00E9A6D4 /* NutritionTableViewCell.xib */; };
 		5C36A526261B575F00E9A6D4 /* NutritionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C36A525261B575F00E9A6D4 /* NutritionTableViewCell.swift */; };
-		5C36A52E261B5DEE00E9A6D4 /* NutritionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C36A52D261B5DEE00E9A6D4 /* NutritionDetailViewController.swift */; };
-		5C36A536261B5E0100E9A6D4 /* NutritionDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C36A535261B5E0100E9A6D4 /* NutritionDetail.storyboard */; };
+		5C36A52E261B5DEE00E9A6D4 /* _NutritionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C36A52D261B5DEE00E9A6D4 /* _NutritionDetailViewController.swift */; };
 		5CAA2F99262ED94300547E30 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAA2F98262ED94300547E30 /* AppRouter.swift */; };
 		5CAA2F9F262ED95700547E30 /* AppPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAA2F9E262ED95700547E30 /* AppPresenter.swift */; };
 		5CBA175F262EDB52007B3B40 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBA175D262EDB52007B3B40 /* HomeViewController.swift */; };
@@ -37,14 +36,12 @@
 		5CBA1789262EDDD0007B3B40 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CBA1787262EDDD0007B3B40 /* DetailViewController.xib */; };
 		5CBA1791262EDEB7007B3B40 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBA1790262EDEB7007B3B40 /* DetailPresenter.swift */; };
 		5CBA1796262EDEC4007B3B40 /* DetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBA1795262EDEC4007B3B40 /* DetailRouter.swift */; };
-		5CBA179E262EE20B007B3B40 /* StaticsRepositoryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBA179D262EE20B007B3B40 /* StaticsRepositoryInteractor.swift */; };
+		5CBA179E262EE20B007B3B40 /* NutritionStaticsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBA179D262EE20B007B3B40 /* NutritionStaticsInteractor.swift */; };
 		5CBA17A7262F142E007B3B40 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBA17A6262F142E007B3B40 /* MainPresenter.swift */; };
 		5CBA17AC262F1437007B3B40 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBA17AB262F1437007B3B40 /* MainRouter.swift */; };
 		5CBA17B1262F1443007B3B40 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBA17B0262F1443007B3B40 /* MainViewController.swift */; };
 		5CBDA74C261E009900CF1028 /* UserPFC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBDA74B261E009900CF1028 /* UserPFC.swift */; };
 		5CBDA751261E01BC00CF1028 /* DatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBDA750261E01BC00CF1028 /* DatabaseHelper.swift */; };
-		5CCCFAA1261DFB4900E2E641 /* UserData.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CCCFAA0261DFB4900E2E641 /* UserData.storyboard */; };
-		5CCCFAA6261DFB5500E2E641 /* UserDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCCFAA5261DFB5500E2E641 /* UserDataViewController.swift */; };
 		615ED13EA075A66BADC35BE0 /* Pods_NutritionAnalyzer_legacy_NutritionAnalyzer_legacyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B4441E18D279C76287B08AD /* Pods_NutritionAnalyzer_legacy_NutritionAnalyzer_legacyUITests.framework */; };
 		779946A80FCFC0E2F76461C7 /* Pods_NutritionAnalyzer_legacyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE1E17C8DDF5A21AFAAB4788 /* Pods_NutritionAnalyzer_legacyTests.framework */; };
 /* End PBXBuildFile section */
@@ -71,11 +68,11 @@
 		24F26239DE404AAE7CAD79FE /* Pods-NutritionAnalyzer_legacy-NutritionAnalyzer_legacyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NutritionAnalyzer_legacy-NutritionAnalyzer_legacyUITests.release.xcconfig"; path = "Target Support Files/Pods-NutritionAnalyzer_legacy-NutritionAnalyzer_legacyUITests/Pods-NutritionAnalyzer_legacy-NutritionAnalyzer_legacyUITests.release.xcconfig"; sourceTree = "<group>"; };
 		4B4441E18D279C76287B08AD /* Pods_NutritionAnalyzer_legacy_NutritionAnalyzer_legacyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NutritionAnalyzer_legacy_NutritionAnalyzer_legacyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BBA229D07E53E001C35AE20 /* Pods-NutritionAnalyzer_legacy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NutritionAnalyzer_legacy.debug.xcconfig"; path = "Target Support Files/Pods-NutritionAnalyzer_legacy/Pods-NutritionAnalyzer_legacy.debug.xcconfig"; sourceTree = "<group>"; };
+		5C16EBFD26305E07008DCC78 /* SearchFoodInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFoodInteractor.swift; sourceTree = "<group>"; };
 		5C36A4CA261A1AB700E9A6D4 /* NutritionAnalyzer_legacy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NutritionAnalyzer_legacy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C36A4CD261A1AB700E9A6D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5C36A4CF261A1AB700E9A6D4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5C36A4D1261A1AB700E9A6D4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		5C36A4D4261A1AB700E9A6D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5C36A4D1261A1AB700E9A6D4 /* _ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _ViewController.swift; sourceTree = "<group>"; };
 		5C36A4D6261A1ABA00E9A6D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5C36A4D9261A1ABA00E9A6D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5C36A4DB261A1ABA00E9A6D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -90,8 +87,7 @@
 		5C36A510261A1C3900E9A6D4 /* NutritionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionModel.swift; sourceTree = "<group>"; };
 		5C36A51D261B570E00E9A6D4 /* NutritionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NutritionTableViewCell.xib; sourceTree = "<group>"; };
 		5C36A525261B575F00E9A6D4 /* NutritionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionTableViewCell.swift; sourceTree = "<group>"; };
-		5C36A52D261B5DEE00E9A6D4 /* NutritionDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionDetailViewController.swift; sourceTree = "<group>"; };
-		5C36A535261B5E0100E9A6D4 /* NutritionDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NutritionDetail.storyboard; sourceTree = "<group>"; };
+		5C36A52D261B5DEE00E9A6D4 /* _NutritionDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _NutritionDetailViewController.swift; sourceTree = "<group>"; };
 		5CAA2F98262ED94300547E30 /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
 		5CAA2F9E262ED95700547E30 /* AppPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppPresenter.swift; sourceTree = "<group>"; };
 		5CBA175D262EDB52007B3B40 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -106,14 +102,12 @@
 		5CBA1787262EDDD0007B3B40 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		5CBA1790262EDEB7007B3B40 /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
 		5CBA1795262EDEC4007B3B40 /* DetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRouter.swift; sourceTree = "<group>"; };
-		5CBA179D262EE20B007B3B40 /* StaticsRepositoryInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticsRepositoryInteractor.swift; sourceTree = "<group>"; };
+		5CBA179D262EE20B007B3B40 /* NutritionStaticsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionStaticsInteractor.swift; sourceTree = "<group>"; };
 		5CBA17A6262F142E007B3B40 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
 		5CBA17AB262F1437007B3B40 /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
 		5CBA17B0262F1443007B3B40 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		5CBDA74B261E009900CF1028 /* UserPFC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPFC.swift; sourceTree = "<group>"; };
 		5CBDA750261E01BC00CF1028 /* DatabaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseHelper.swift; sourceTree = "<group>"; };
-		5CCCFAA0261DFB4900E2E641 /* UserData.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserData.storyboard; sourceTree = "<group>"; };
-		5CCCFAA5261DFB5500E2E641 /* UserDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataViewController.swift; sourceTree = "<group>"; };
 		6102E7F7BC378816928E2FDB /* Pods-NutritionAnalyzer_legacy-NutritionAnalyzer_legacyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NutritionAnalyzer_legacy-NutritionAnalyzer_legacyUITests.debug.xcconfig"; path = "Target Support Files/Pods-NutritionAnalyzer_legacy-NutritionAnalyzer_legacyUITests/Pods-NutritionAnalyzer_legacy-NutritionAnalyzer_legacyUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		92FCAB44E79A46673BA64514 /* Pods_NutritionAnalyzer_legacy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NutritionAnalyzer_legacy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3DDC62E8C546CC85D8184C8 /* Pods-NutritionAnalyzer_legacyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NutritionAnalyzer_legacyTests.debug.xcconfig"; path = "Target Support Files/Pods-NutritionAnalyzer_legacyTests/Pods-NutritionAnalyzer_legacyTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -220,10 +214,10 @@
 		5C36A52A261B5DA100E9A6D4 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				5C36A52D261B5DEE00E9A6D4 /* NutritionDetailViewController.swift */,
+				5C36A52D261B5DEE00E9A6D4 /* _NutritionDetailViewController.swift */,
+				5C36A4D1261A1AB700E9A6D4 /* _ViewController.swift */,
 				5C36A525261B575F00E9A6D4 /* NutritionTableViewCell.swift */,
-				5CCCFAA5261DFB5500E2E641 /* UserDataViewController.swift */,
-				5C36A4D1261A1AB700E9A6D4 /* ViewController.swift */,
+				5C36A51D261B570E00E9A6D4 /* NutritionTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -248,11 +242,7 @@
 		5CA85B6F261F4B36000B9D4C /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
-				5C36A535261B5E0100E9A6D4 /* NutritionDetail.storyboard */,
-				5CCCFAA0261DFB4900E2E641 /* UserData.storyboard */,
-				5C36A51D261B570E00E9A6D4 /* NutritionTableViewCell.xib */,
 				5C36A4D8261A1ABA00E9A6D4 /* LaunchScreen.storyboard */,
-				5C36A4D3261A1AB700E9A6D4 /* Main.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -340,7 +330,7 @@
 		5CAA2FAE262ED9E000547E30 /* StaticsRepository */ = {
 			isa = PBXGroup;
 			children = (
-				5CBA179D262EE20B007B3B40 /* StaticsRepositoryInteractor.swift */,
+				5CBA179D262EE20B007B3B40 /* NutritionStaticsInteractor.swift */,
 			);
 			path = StaticsRepository;
 			sourceTree = "<group>";
@@ -348,6 +338,7 @@
 		5CAA2FAF262ED9FA00547E30 /* SearchRepository */ = {
 			isa = PBXGroup;
 			children = (
+				5C16EBFD26305E07008DCC78 /* SearchFoodInteractor.swift */,
 			);
 			path = SearchRepository;
 			sourceTree = "<group>";
@@ -492,14 +483,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C36A4DA261A1ABA00E9A6D4 /* LaunchScreen.storyboard in Resources */,
-				5CCCFAA1261DFB4900E2E641 /* UserData.storyboard in Resources */,
 				5C36A51E261B570E00E9A6D4 /* NutritionTableViewCell.xib in Resources */,
 				5C36A501261A1B0300E9A6D4 /* nutrition_labels_fact.json in Resources */,
 				5C36A4D7261A1ABA00E9A6D4 /* Assets.xcassets in Resources */,
 				5CBA1782262EDC84007B3B40 /* SearchViewController.xib in Resources */,
-				5C36A536261B5E0100E9A6D4 /* NutritionDetail.storyboard in Resources */,
 				5CBA1789262EDDD0007B3B40 /* DetailViewController.xib in Resources */,
-				5C36A4D5261A1AB700E9A6D4 /* Main.storyboard in Resources */,
 				5CBA1760262EDB52007B3B40 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -628,15 +616,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5C36A4D2261A1AB700E9A6D4 /* ViewController.swift in Sources */,
-				5C36A52E261B5DEE00E9A6D4 /* NutritionDetailViewController.swift in Sources */,
+				5C36A4D2261A1AB700E9A6D4 /* _ViewController.swift in Sources */,
+				5C36A52E261B5DEE00E9A6D4 /* _NutritionDetailViewController.swift in Sources */,
 				5CAA2F9F262ED95700547E30 /* AppPresenter.swift in Sources */,
 				5CBA1791262EDEB7007B3B40 /* DetailPresenter.swift in Sources */,
 				5C36A511261A1C3900E9A6D4 /* NutritionModel.swift in Sources */,
 				5CBA1772262EDC55007B3B40 /* SearchRouter.swift in Sources */,
 				5CBA176D262EDB83007B3B40 /* HomeRouter.swift in Sources */,
 				5C36A506261A1B1400E9A6D4 /* Nutrition.swift in Sources */,
-				5CBA179E262EE20B007B3B40 /* StaticsRepositoryInteractor.swift in Sources */,
+				5CBA179E262EE20B007B3B40 /* NutritionStaticsInteractor.swift in Sources */,
 				5C36A4CE261A1AB700E9A6D4 /* AppDelegate.swift in Sources */,
 				5C36A526261B575F00E9A6D4 /* NutritionTableViewCell.swift in Sources */,
 				5CBA1768262EDB76007B3B40 /* HomePresenter.swift in Sources */,
@@ -646,13 +634,13 @@
 				5CBDA751261E01BC00CF1028 /* DatabaseHelper.swift in Sources */,
 				5CAA2F99262ED94300547E30 /* AppRouter.swift in Sources */,
 				5CBA1781262EDC84007B3B40 /* SearchViewController.swift in Sources */,
+				5C16EBFE26305E07008DCC78 /* SearchFoodInteractor.swift in Sources */,
 				5CBA17AC262F1437007B3B40 /* MainRouter.swift in Sources */,
 				5C36A4D0261A1AB700E9A6D4 /* SceneDelegate.swift in Sources */,
 				5CBA17A7262F142E007B3B40 /* MainPresenter.swift in Sources */,
 				5CBDA74C261E009900CF1028 /* UserPFC.swift in Sources */,
 				5CBA177B262EDC63007B3B40 /* SearchPresenter.swift in Sources */,
 				5CBA175F262EDB52007B3B40 /* HomeViewController.swift in Sources */,
-				5CCCFAA6261DFB5500E2E641 /* UserDataViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -688,14 +676,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		5C36A4D3261A1AB700E9A6D4 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5C36A4D4261A1AB700E9A6D4 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		5C36A4D8261A1ABA00E9A6D4 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
