@@ -17,28 +17,25 @@ class SearchPresenter {
     private weak var view: SearchView?
     private let router: SearchWireframe
     private let searchFoodInteractor: SearchFoodInteractor
-    private let searchModel: NutritionModel
 
     init(view: SearchView,
          router: SearchWireframe,
-         searchFoodInteractor: SearchFoodInteractor,
-         searchModel: NutritionModel) {
+         searchFoodInteractor: SearchFoodInteractor) {
         self.view = view
         self.router = router
         self.searchFoodInteractor = searchFoodInteractor
-        self.searchModel = searchModel
     }
 }
 
 extension SearchPresenter: SearchPresentation {
     func viewDidLoad() {
-        searchModel.initializeDB()
+        searchFoodInteractor.initializeDB()
 
-        view?.updateTableView(data: searchModel.dataSource)
+        view?.updateTableView(data: searchFoodInteractor.dataSource)
     }
 
     func searchButtonTapped(_ foodName: String) {
-        let data = searchModel.getFoodBy(foodName)
+        let data = searchFoodInteractor.getFoodBy(foodName)
         view?.updateTableView(data: data)
     }
 

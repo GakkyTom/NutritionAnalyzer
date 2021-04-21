@@ -34,7 +34,7 @@ class NutritionDetailViewController: UIViewController {
 
     @IBAction func onTapAddButton(_ sender: Any) {
         if let data = self.data {
-            let model = NutritionModel()
+            let model = SearchFoodInteractor()
 
             model.insert(nutrition: data)
             self.dismiss(animated: true, completion: nil)

@@ -26,9 +26,8 @@ class SearchRouter {
 
         let router = SearchRouter(viewController: view)
         let searchFoodInteractor = SearchFoodInteractor()
-        let searchModel = NutritionModel()
 
-        let presenter = SearchPresenter(view: view, router: router, searchFoodInteractor: searchFoodInteractor, searchModel: searchModel)
+        let presenter = SearchPresenter(view: view, router: router, searchFoodInteractor: searchFoodInteractor)
 
         view.presenter = presenter
 

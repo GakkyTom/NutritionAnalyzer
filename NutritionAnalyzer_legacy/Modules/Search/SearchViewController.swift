@@ -11,6 +11,10 @@ protocol SearchView: AnyObject {
     func updateTableView(data: [Nutrition])
 }
 
+/**
+ * 基本的にUIの初期セットアップのみ
+ * イベントは全部presenterが処理する
+ */
 class SearchViewController: UIViewController, UIGestureRecognizerDelegate {
 
     @IBOutlet weak var tableView: UITableView!

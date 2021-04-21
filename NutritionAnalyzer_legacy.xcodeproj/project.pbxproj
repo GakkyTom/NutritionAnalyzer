@@ -17,7 +17,6 @@
 		5C36A4F0261A1ABA00E9A6D4 /* NutritionAnalyzer_legacyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C36A4EF261A1ABA00E9A6D4 /* NutritionAnalyzer_legacyUITests.swift */; };
 		5C36A501261A1B0300E9A6D4 /* nutrition_labels_fact.json in Resources */ = {isa = PBXBuildFile; fileRef = 5C36A500261A1B0300E9A6D4 /* nutrition_labels_fact.json */; };
 		5C36A506261A1B1400E9A6D4 /* Nutrition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C36A505261A1B1400E9A6D4 /* Nutrition.swift */; };
-		5C36A511261A1C3900E9A6D4 /* NutritionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C36A510261A1C3900E9A6D4 /* NutritionModel.swift */; };
 		5C36A51E261B570E00E9A6D4 /* NutritionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C36A51D261B570E00E9A6D4 /* NutritionTableViewCell.xib */; };
 		5C36A526261B575F00E9A6D4 /* NutritionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C36A525261B575F00E9A6D4 /* NutritionTableViewCell.swift */; };
 		5C36A52E261B5DEE00E9A6D4 /* _NutritionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C36A52D261B5DEE00E9A6D4 /* _NutritionDetailViewController.swift */; };
@@ -82,7 +81,6 @@
 		5C36A4F1261A1ABA00E9A6D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5C36A500261A1B0300E9A6D4 /* nutrition_labels_fact.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = nutrition_labels_fact.json; sourceTree = "<group>"; };
 		5C36A505261A1B1400E9A6D4 /* Nutrition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nutrition.swift; sourceTree = "<group>"; };
-		5C36A510261A1C3900E9A6D4 /* NutritionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionModel.swift; sourceTree = "<group>"; };
 		5C36A51D261B570E00E9A6D4 /* NutritionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NutritionTableViewCell.xib; sourceTree = "<group>"; };
 		5C36A525261B575F00E9A6D4 /* NutritionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionTableViewCell.swift; sourceTree = "<group>"; };
 		5C36A52D261B5DEE00E9A6D4 /* _NutritionDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _NutritionDetailViewController.swift; sourceTree = "<group>"; };
@@ -183,7 +181,6 @@
 				5CAA2FAD262ED9D600547E30 /* Domain */,
 				5C36A52C261B5DC200E9A6D4 /* Entity */,
 				5CBA17B5262F1E6D007B3B40 /* Infra */,
-				5C36A52B261B5DBA00E9A6D4 /* Model */,
 				5CAA2FA6262ED98400547E30 /* Modules */,
 				5CA85B6F261F4B36000B9D4C /* Storyboard */,
 				5C36A52A261B5DA100E9A6D4 /* View */,
@@ -217,14 +214,6 @@
 				5C36A51D261B570E00E9A6D4 /* NutritionTableViewCell.xib */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		5C36A52B261B5DBA00E9A6D4 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				5C36A510261A1C3900E9A6D4 /* NutritionModel.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		5C36A52C261B5DC200E9A6D4 /* Entity */ = {
@@ -616,7 +605,6 @@
 				5C36A52E261B5DEE00E9A6D4 /* _NutritionDetailViewController.swift in Sources */,
 				5CAA2F9F262ED95700547E30 /* AppPresenter.swift in Sources */,
 				5CBA1791262EDEB7007B3B40 /* DetailPresenter.swift in Sources */,
-				5C36A511261A1C3900E9A6D4 /* NutritionModel.swift in Sources */,
 				5CBA1772262EDC55007B3B40 /* SearchRouter.swift in Sources */,
 				5CBA176D262EDB83007B3B40 /* HomeRouter.swift in Sources */,
 				5C36A506261A1B1400E9A6D4 /* Nutrition.swift in Sources */,
