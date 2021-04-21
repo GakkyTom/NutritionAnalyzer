@@ -21,6 +21,6 @@ class AppPresenter {
 
 extension AppPresenter: AppPresentation {
     func didFinishLaunch() {
-        router.showHomeView()
+        router.showMainView()
     }
 }

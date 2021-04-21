@@ -8,7 +8,7 @@
 import UIKit
 
 protocol AppWireframe: AnyObject {
-    func showHomeView()
+    func showMainView()
 }
 
 class AppRouter {
@@ -27,11 +27,11 @@ class AppRouter {
 }
 
 extension AppRouter: AppWireframe {
-    func showHomeView() {
-        let homeView = HomeRouter.assembleModules()
-        let navigationController = UINavigationController(rootViewController: homeView)
 
-        window.rootViewController = navigationController
+    func showMainView() {
+        let mainView = MainRouter.assembleModules()
+
+        window.rootViewController = mainView
         window.makeKeyAndVisible()
     }
 }

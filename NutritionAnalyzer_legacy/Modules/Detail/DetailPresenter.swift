@@ -7,14 +7,21 @@
 
 import Foundation
 
-protocol DetailPresentation {
+protocol DetailPresentation: AnyObject {
 
 }
 
 class DetailPresenter {
+    private weak var view: DetailView?
+    private let router: DetailWireframe
 
+    init(view: DetailView,
+         router: DetailWireframe) {
+        self.view = view
+        self.router = router
+    }
 }
 
 extension DetailPresenter: DetailPresentation {
-    
+
 }
