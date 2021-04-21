@@ -9,18 +9,22 @@ import Foundation
 
 protocol DetailPresentation: AnyObject {
     func viewDidLoad()
+    func addButtonTapped()
 }
 
 class DetailPresenter {
     private weak var view: DetailView?
     private let router: DetailWireframe
+    private let searchFoodInteractor: SearchFoodUsecase
     private let food: Nutrition
 
     init(view: DetailView,
          router: DetailWireframe,
+         searchFoodInteractor: SearchFoodUsecase,
          food: Nutrition) {
         self.view = view
         self.router = router
+        self.searchFoodInteractor = searchFoodInteractor
         self.food = food
     }
 }
@@ -28,5 +32,10 @@ class DetailPresenter {
 extension DetailPresenter: DetailPresentation {
     func viewDidLoad() {
         view?.updateLabels(food: food)
+    }
+
+    func addButtonTapped() {
+        searchFoodInteractor.insert(nutrition: food)
+        view?.closeDetail()
     }
 }

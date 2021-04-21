@@ -14,6 +14,7 @@
                 <outlet property="carbohydrateQtLabel" destination="N2f-cH-iqX" id="mJG-6o-uZq"/>
                 <outlet property="fatLabel" destination="psP-4u-Xu4" id="Ej6-JC-HIG"/>
                 <outlet property="fatQtLabel" destination="K2t-PY-9NB" id="NUV-iM-EaQ"/>
+                <outlet property="foodNameLabel" destination="2eu-vY-Wua" id="2iu-rH-jpU"/>
                 <outlet property="proteinLabel" destination="uYg-G4-hON" id="cOZ-Wo-Ieg"/>
                 <outlet property="proteinQtLabel" destination="M1P-fl-BG4" id="bYb-IA-h8T"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -78,6 +79,19 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2eu-vY-Wua" userLabel="Food Name">
+                    <rect key="frame" x="163" y="59" width="88" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ya-uC-YHo">
+                    <rect key="frame" x="192" y="377" width="30" height="30"/>
+                    <state key="normal" title="Add"/>
+                    <connections>
+                        <action selector="addButtonTapped:" destination="-1" eventType="touchUpInside" id="2R5-gN-hXh"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -88,18 +102,22 @@
                 <constraint firstItem="yGd-jt-uLh" firstAttribute="leading" secondItem="K2t-PY-9NB" secondAttribute="trailing" constant="30" id="4af-RE-dTc"/>
                 <constraint firstItem="KGh-kv-A5s" firstAttribute="top" secondItem="yGd-jt-uLh" secondAttribute="bottom" constant="50" id="A2m-zR-b7q"/>
                 <constraint firstItem="aJE-5n-9v3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="FqV-6F-MYO"/>
+                <constraint firstItem="9ya-uC-YHo" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="H28-wM-jhm"/>
                 <constraint firstItem="K2t-PY-9NB" firstAttribute="top" secondItem="M1P-fl-BG4" secondAttribute="bottom" constant="50" id="Ikj-20-yU5"/>
                 <constraint firstItem="psP-4u-Xu4" firstAttribute="top" secondItem="uYg-G4-hON" secondAttribute="bottom" constant="50" id="Pxf-X3-t9g"/>
                 <constraint firstItem="uYg-G4-hON" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="80" id="QR0-bY-4GT"/>
                 <constraint firstItem="KGh-kv-A5s" firstAttribute="leading" secondItem="N2f-cH-iqX" secondAttribute="trailing" constant="30" id="aFy-ro-LSf"/>
+                <constraint firstItem="2eu-vY-Wua" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="bVz-lm-y1M"/>
                 <constraint firstItem="N2f-cH-iqX" firstAttribute="leading" secondItem="K2t-PY-9NB" secondAttribute="leading" id="cm8-Fb-nYp"/>
                 <constraint firstItem="uYg-G4-hON" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="gTW-JJ-kAo"/>
                 <constraint firstItem="yGd-jt-uLh" firstAttribute="top" secondItem="xim-XY-o8w" secondAttribute="bottom" constant="50" id="hO4-eq-p9c"/>
                 <constraint firstItem="xim-XY-o8w" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="80" id="iVg-D1-MDc"/>
                 <constraint firstItem="K2t-PY-9NB" firstAttribute="leading" secondItem="M1P-fl-BG4" secondAttribute="leading" id="kzS-ac-qSz"/>
                 <constraint firstItem="M1P-fl-BG4" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="80" id="okH-U5-5QI"/>
+                <constraint firstItem="2eu-vY-Wua" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="15" id="qng-6O-LIY"/>
                 <constraint firstItem="aJE-5n-9v3" firstAttribute="top" secondItem="psP-4u-Xu4" secondAttribute="bottom" constant="50" id="sw4-ii-j0E"/>
                 <constraint firstItem="M1P-fl-BG4" firstAttribute="leading" secondItem="uYg-G4-hON" secondAttribute="trailing" constant="90" id="x48-LA-P4x"/>
+                <constraint firstItem="9ya-uC-YHo" firstAttribute="top" secondItem="N2f-cH-iqX" secondAttribute="bottom" constant="90" id="y5J-6n-k3p"/>
             </constraints>
             <point key="canvasLocation" x="-20.289855072463769" y="71.651785714285708"/>
         </view>
