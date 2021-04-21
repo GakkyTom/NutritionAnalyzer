@@ -33,16 +33,17 @@ class SearchViewController: UIViewController, UIGestureRecognizerDelegate {
         super.viewDidLoad()
 
         setupTableView()
-        setGestureRecognizer()
-        setupAppearance()
+        setupGestureRecognizer()
+        setupTextField()
         presenter.viewDidLoad()
     }
 
-    private func setupAppearance() {
+    private func setupTextField() {
         self.searchBoxTextField.delegate = self
+        self.searchBoxTextField.returnKeyType = .search
     }
 
-    private func setGestureRecognizer() {
+    private func setupGestureRecognizer() {
         self.tapGestureRecognizer = UITapGestureRecognizer.init(target: self, action: #selector(self.gestureRecognizerAction))
         self.tapGestureRecognizer.delegate = self
     }
