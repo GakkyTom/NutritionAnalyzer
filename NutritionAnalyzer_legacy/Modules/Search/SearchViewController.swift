@@ -18,37 +18,33 @@ protocol SearchView: AnyObject {
 class SearchViewController: UIViewController, UIGestureRecognizerDelegate {
 
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var searchBoxTextField: UITextField!
 
     var presenter: SearchPresentation!
 
     var data: [Nutrition] = []
     let cellIdentifier = "NutritionTableViewCell"
-    private var tapGestureRecognizer : UITapGestureRecognizer!
 
-    @IBAction func searchButtonTapped(_ sender: Any) {
-        searchFoods()
-    }
+    private lazy var searchBar: UISearchBar = {
+        let searchBar = UISearchBar()
+        searchBar.placeholder = "食材名を入力"
+        searchBar.delegate = self
+
+        return searchBar
+    }()
+
+    private var tapGestureRecognizer : UITapGestureRecognizer!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupTableView()
         setupGestureRecognizer()
-        setupTextField()
+        setupNavigationBar()
         presenter.viewDidLoad()
     }
 
-    private func searchFoods() {
-        if let foodName = self.searchBoxTextField.text {
-            self.searchBoxTextField.resignFirstResponder()
-            presenter.searchButtonTapped(foodName)
-        }
-    }
-
-    private func setupTextField() {
-        self.searchBoxTextField.delegate = self
-        self.searchBoxTextField.returnKeyType = .search
+    private func setupNavigationBar() {
+        navigationItem.titleView = searchBar
     }
 
     private func setupGestureRecognizer() {
@@ -63,7 +59,7 @@ class SearchViewController: UIViewController, UIGestureRecognizerDelegate {
     }
 
     @objc func gestureRecognizerAction(_ sender: UITapGestureRecognizer){
-        self.searchBoxTextField.resignFirstResponder()
+        self.searchBar.resignFirstResponder()
     }
 }
 
@@ -74,20 +70,20 @@ extension SearchViewController: SearchView {
     }
 }
 
-extension SearchViewController: UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.searchBoxTextField.resignFirstResponder()
-        self.searchFoods()
+extension SearchViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let foodName = searchBar.text else { return }
 
-        return true
+        presenter.searchButtonTapped(foodName)
+
+        searchBar.resignFirstResponder()
     }
 
-    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         self.view.addGestureRecognizer(tapGestureRecognizer)
-        return true
     }
 
-    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+    func searchBarShouldEndEditing(_ searchBar: UISearchBar) -> Bool {
         self.view.removeGestureRecognizer(tapGestureRecognizer)
         return true
     }

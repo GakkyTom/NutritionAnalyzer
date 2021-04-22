@@ -16,6 +16,7 @@ class DatabaseHelper {
     private var dbQueue: DatabaseQueue?
 
     /// データベースの操作
+    @discardableResult
     func inDatabase(_ block: (Database) throws -> Void) -> Bool {
         do {
             // 初回実行時にデータベースファイルを生成する
