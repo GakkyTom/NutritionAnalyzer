@@ -21,6 +21,10 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var fatQtLabel: UILabel!
     @IBOutlet weak var carbohydrateQtLabel: UILabel!
 
+    @IBAction func calcButtonTapped(_ sender: Any) {
+        // g * nutritionにしてCellをUpdate
+        // 表示用のEntityと計算メソッド用意してあげたほうが幸せになる
+    }
     @IBAction func addButtonTapped(_ sender: Any) {
         presenter.addButtonTapped()
     }
