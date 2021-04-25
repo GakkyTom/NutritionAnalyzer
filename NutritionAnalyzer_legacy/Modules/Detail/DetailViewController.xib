@@ -10,6 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailViewController" customModule="NutritionAnalyzer_legacy" customModuleProvider="target">
             <connections>
+                <outlet property="calcFieldView" destination="nwm-Pl-Hqo" id="Pho-Up-8qs"/>
+                <outlet property="calcTextField" destination="oEv-UE-zko" id="ifX-y0-zoT"/>
                 <outlet property="foodNameLabel" destination="2eu-vY-Wua" id="2iu-rH-jpU"/>
                 <outlet property="tableView" destination="CFY-XO-6uB" id="GWo-1t-4xx"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -20,25 +22,49 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nwm-Pl-Hqo" userLabel="Calc Field View">
+                    <rect key="frame" x="132" y="759" width="150" height="45"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oEv-UE-zko">
+                            <rect key="frame" x="16" y="5.5" width="50" height="34"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="50" id="CJB-5L-f7H"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                        </textField>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="g" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BgV-Bw-30M">
+                            <rect key="frame" x="76" y="12.5" width="10" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ZC-4w-mcY">
+                            <rect key="frame" x="103" y="7.5" width="31" height="30"/>
+                            <state key="normal" title="Calc"/>
+                            <connections>
+                                <action selector="calcButtonTapped:" destination="-1" eventType="touchUpInside" id="jmA-gV-xOw"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="oEv-UE-zko" firstAttribute="centerY" secondItem="nwm-Pl-Hqo" secondAttribute="centerY" id="0fr-8X-C7d"/>
+                        <constraint firstItem="BgV-Bw-30M" firstAttribute="leading" secondItem="oEv-UE-zko" secondAttribute="trailing" constant="10" id="5sd-T0-rwy"/>
+                        <constraint firstAttribute="height" constant="45" id="9i0-cL-oNL"/>
+                        <constraint firstItem="oEv-UE-zko" firstAttribute="leading" secondItem="nwm-Pl-Hqo" secondAttribute="leading" constant="16" id="KmG-O2-oQC"/>
+                        <constraint firstItem="BgV-Bw-30M" firstAttribute="centerY" secondItem="nwm-Pl-Hqo" secondAttribute="centerY" id="ikn-ow-LaY"/>
+                        <constraint firstAttribute="trailing" secondItem="5ZC-4w-mcY" secondAttribute="trailing" constant="16" id="jOv-LC-6wW"/>
+                        <constraint firstAttribute="width" constant="150" id="mKh-KT-EWl"/>
+                        <constraint firstItem="5ZC-4w-mcY" firstAttribute="centerY" secondItem="nwm-Pl-Hqo" secondAttribute="centerY" id="tB6-po-A4v"/>
+                    </constraints>
+                </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2eu-vY-Wua" userLabel="Food Name">
                     <rect key="frame" x="16" y="59" width="382" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="g" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BgV-Bw-30M">
-                    <rect key="frame" x="178" y="755" width="10" height="20.5"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ZC-4w-mcY">
-                    <rect key="frame" x="238" y="750" width="31" height="30"/>
-                    <state key="normal" title="Calc"/>
-                    <connections>
-                        <action selector="calcButtonTapped:" destination="-1" eventType="touchUpInside" id="jmA-gV-xOw"/>
-                    </connections>
-                </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ya-uC-YHo">
                     <rect key="frame" x="192" y="812" width="30" height="30"/>
                     <state key="normal" title="Add"/>
@@ -50,34 +76,22 @@
                     <rect key="frame" x="0.0" y="89.5" width="414" height="652.5"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oEv-UE-zko">
-                    <rect key="frame" x="123" y="748" width="50" height="34"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="50" id="CJB-5L-f7H"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                </textField>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="5ZC-4w-mcY" firstAttribute="leading" secondItem="BgV-Bw-30M" secondAttribute="trailing" constant="50" id="0po-ie-ABo"/>
+                <constraint firstItem="9ya-uC-YHo" firstAttribute="top" secondItem="nwm-Pl-Hqo" secondAttribute="bottom" constant="8" id="9g6-rh-cNy"/>
                 <constraint firstItem="CFY-XO-6uB" firstAttribute="top" secondItem="2eu-vY-Wua" secondAttribute="bottom" constant="10" id="Cv2-sh-4P2"/>
                 <constraint firstItem="9ya-uC-YHo" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="H28-wM-jhm"/>
                 <constraint firstItem="CFY-XO-6uB" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="JNE-Ta-yde"/>
                 <constraint firstItem="CFY-XO-6uB" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="KBX-JA-1ho"/>
+                <constraint firstItem="nwm-Pl-Hqo" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Tp8-vx-Zzs"/>
                 <constraint firstItem="2eu-vY-Wua" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="bVz-lm-y1M"/>
-                <constraint firstItem="oEv-UE-zko" firstAttribute="top" secondItem="CFY-XO-6uB" secondAttribute="bottom" constant="6" id="dDy-Ar-vVA"/>
-                <constraint firstItem="BgV-Bw-30M" firstAttribute="centerY" secondItem="oEv-UE-zko" secondAttribute="centerY" id="fIK-2A-qvZ"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="2eu-vY-Wua" secondAttribute="trailing" constant="16" id="gg2-SD-GaV"/>
                 <constraint firstItem="2eu-vY-Wua" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="guA-ee-05X"/>
-                <constraint firstItem="5ZC-4w-mcY" firstAttribute="centerY" secondItem="BgV-Bw-30M" secondAttribute="centerY" id="njg-qK-Hni"/>
-                <constraint firstItem="oEv-UE-zko" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="123" id="pCN-gI-1XO"/>
-                <constraint firstItem="9ya-uC-YHo" firstAttribute="top" secondItem="oEv-UE-zko" secondAttribute="bottom" constant="30" id="pRQ-Zr-WR9"/>
                 <constraint firstItem="2eu-vY-Wua" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="15" id="qng-6O-LIY"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="9ya-uC-YHo" secondAttribute="bottom" constant="20" id="s21-uA-dqa"/>
-                <constraint firstItem="BgV-Bw-30M" firstAttribute="leading" secondItem="oEv-UE-zko" secondAttribute="trailing" constant="5" id="wjx-Yu-zyj"/>
+                <constraint firstItem="nwm-Pl-Hqo" firstAttribute="top" secondItem="CFY-XO-6uB" secondAttribute="bottom" constant="17" id="yue-C7-xjp"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="-20.289855072463769" y="71.651785714285708"/>
