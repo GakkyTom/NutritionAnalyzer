@@ -11,7 +11,7 @@ import GRDB
 class DatabaseHelper {
     static let DB_FILE_NAME = "nutrition_analyzer.db"
 
-    let databaseFile = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
+    let databaseFile = NSTemporaryDirectory() + "database.db" // try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
 //    private let databaseFile = NSHomeDirectory() + "/Documents/" + DB_FILE_NAME
     private var dbQueue: DatabaseQueue?
 
@@ -20,7 +20,7 @@ class DatabaseHelper {
     func inDatabase(_ block: (Database) throws -> Void) -> Bool {
         do {
             // 初回実行時にデータベースファイルを生成する
-            let dbQueue = try DatabaseQueue(path: self.databaseFile.path)
+            let dbQueue = try DatabaseQueue(path: self.databaseFile)
             try dbQueue.inDatabase(block)
         } catch let error {
             print("Database Error: \(error.localizedDescription)")

@@ -10,6 +10,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="NutritionAnalyzer_legacy" customModuleProvider="target">
             <connections>
+                <outlet property="carbohydrateLabel" destination="3rU-Ux-DjT" id="Its-AK-nMT"/>
+                <outlet property="fatLabel" destination="FnO-h4-5br" id="eGU-xT-JvW"/>
+                <outlet property="proteinLabel" destination="fQE-9C-Nos" id="hII-AE-p3F"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,9 +21,20 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fQE-9C-Nos">
-                    <rect key="frame" x="212" y="302" width="42" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Protein" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fQE-9C-Nos">
+                    <rect key="frame" x="16" y="144" width="382" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fat" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FnO-h4-5br">
+                    <rect key="frame" x="16" y="264.5" width="382" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Carbohydrate" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3rU-Ux-DjT">
+                    <rect key="frame" x="16" y="385" width="382" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -28,6 +42,17 @@
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="3rU-Ux-DjT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="BYa-aJ-Cmc"/>
+                <constraint firstItem="3rU-Ux-DjT" firstAttribute="top" secondItem="FnO-h4-5br" secondAttribute="bottom" constant="100" id="G21-Oc-RPv"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="fQE-9C-Nos" secondAttribute="trailing" constant="16" id="LFM-cp-Pcr"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="3rU-Ux-DjT" secondAttribute="trailing" constant="16" id="PjH-n8-062"/>
+                <constraint firstItem="fQE-9C-Nos" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="100" id="Qxe-8S-gbJ"/>
+                <constraint firstItem="fQE-9C-Nos" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="TAd-5s-Spp"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="FnO-h4-5br" secondAttribute="trailing" constant="16" id="USO-Pc-75i"/>
+                <constraint firstItem="FnO-h4-5br" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="b5j-lV-RlF"/>
+                <constraint firstItem="FnO-h4-5br" firstAttribute="top" secondItem="fQE-9C-Nos" secondAttribute="bottom" constant="100" id="yga-uf-NrD"/>
+            </constraints>
             <point key="canvasLocation" x="-61" y="58"/>
         </view>
     </objects>

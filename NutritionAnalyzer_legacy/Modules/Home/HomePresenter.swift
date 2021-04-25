@@ -8,7 +8,8 @@
 import Foundation
 
 protocol HomePresentation: AnyObject {
-
+    func fetchUserData() -> [UserPFC]
+    func sumup(_ target: String) -> Double
 }
 
 class HomePresenter {
@@ -26,5 +27,11 @@ class HomePresenter {
 }
 
 extension HomePresenter: HomePresentation {
+    func fetchUserData() -> [UserPFC] {
+        return nutritionStaticsInteractor.fetch()
+    }
 
+    func sumup(_ target: String) -> Double {
+        return nutritionStaticsInteractor.sumup(target)
+    }
 }
