@@ -8,44 +8,73 @@
 import UIKit
 
 protocol DetailView: AnyObject {
-    func updateLabels(food: Nutrition)
+    func updateLabels(food: Food)
+    func updateData(food: Food)
+    func calcNutrition()
     func closeDetail()
 }
 
 class DetailViewController: UIViewController {
     @IBOutlet weak var foodNameLabel: UILabel!
-    @IBOutlet weak var proteinLabel: UILabel!
-    @IBOutlet weak var fatLabel: UILabel!
-    @IBOutlet weak var carbohydrateLabel: UILabel!
-    @IBOutlet weak var proteinQtLabel: UILabel!
-    @IBOutlet weak var fatQtLabel: UILabel!
-    @IBOutlet weak var carbohydrateQtLabel: UILabel!
 
+    @IBOutlet weak var tableView: UITableView!
     @IBAction func calcButtonTapped(_ sender: Any) {
-        // g * nutritionにしてCellをUpdate
-        // 表示用のEntityと計算メソッド用意してあげたほうが幸せになる
+        presenter.calcButtonTapped()
     }
+    
     @IBAction func addButtonTapped(_ sender: Any) {
         presenter.addButtonTapped()
     }
+    
     var presenter: DetailPresentation!
+    var food: Food!
+    let cellIdentifier = "DetailTableViewCell"
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         presenter.viewDidLoad()
+
+        setupTableView()
+    }
+
+    private func setupTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        self.tableView.register(UINib(nibName: cellIdentifier, bundle: nil), forCellReuseIdentifier: cellIdentifier)
     }
 }
 
 extension DetailViewController: DetailView {
-    func updateLabels(food: Nutrition) {
+    func updateLabels(food: Food) {
         self.foodNameLabel.text = food.foodName
-        self.proteinQtLabel.text = food.protein.description
-        self.fatQtLabel.text = food.fat.description
-        self.carbohydrateQtLabel.text = food.carbohydrate.description
+    }
+    func updateData(food: Food) {
+        self.food = food
     }
 
     func closeDetail() {
         self.dismiss(animated: true, completion: nil)
+    }
+
+    func calcNutrition() {
+
+    }
+}
+
+extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        food.nutritions.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! DetailTableViewCell
+        cell.setupCell(nutrition: food.nutritions[indexPath.row])
+
+        return cell
+    }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return DetailTableViewCell.cellHeight
     }
 }

@@ -8,7 +8,7 @@
 import UIKit
 
 protocol SearchView: AnyObject {
-    func updateTableView(data: [Nutrition])
+    func updateTableView(data: [Food])
 }
 
 /**
@@ -21,7 +21,7 @@ class SearchViewController: UIViewController, UIGestureRecognizerDelegate {
 
     var presenter: SearchPresentation!
 
-    var data: [Nutrition] = []
+    var data: [Food] = []
     let cellIdentifier = "SearchResultTableViewCell"
 
     private lazy var searchBar: UISearchBar = {
@@ -64,7 +64,7 @@ class SearchViewController: UIViewController, UIGestureRecognizerDelegate {
 }
 
 extension SearchViewController: SearchView {
-    func updateTableView(data: [Nutrition]) {
+    func updateTableView(data: [Food]) {
         self.data = data
         tableView.reloadData()
     }
@@ -96,7 +96,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! SearchResultTableViewCell
-        cell.setupCell(nutrition: data[indexPath.row])
+        cell.setupCell(food: data[indexPath.row])
 
         return cell
     }

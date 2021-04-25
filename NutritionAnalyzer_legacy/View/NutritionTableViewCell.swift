@@ -28,11 +28,11 @@ class NutritionTableViewCell: UITableViewCell {
 
     static let cellHeight: CGFloat = 73
 
-    func setupCell(nutrition: Nutrition, actual: Double, planned: Double, percentage: Double) {
-        self.titleLabel.text = nutrition.foodName
-        self.percentageLabel.text = "\((percentage * 100).description)%"
-        self.actualLabel.text = "\(actual.description)g"
-        self.plannedLabel.text = "\(planned.description)g"
+    func setupCell(food: Food) {
+        self.titleLabel.text = food.foodName
+//        self.percentageLabel.text = "\((percentage * 100).description)%"
+//        self.actualLabel.text = "\(actual.description)g"
+//        self.plannedLabel.text = "\(planned.description)g"
 
         setupCellAppearance()
     }

@@ -19,7 +19,7 @@ class DetailRouter {
     }
 
     // DI
-    static func assembleModules(food: Nutrition) -> UIViewController {
+    static func assembleModules(food: Food) -> UIViewController {
         let view = DetailViewController()
         let router = DetailRouter(viewController: view)
         let searchFoodInteractor = SearchFoodInteractor()

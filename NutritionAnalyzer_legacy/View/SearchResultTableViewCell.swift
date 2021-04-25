@@ -16,17 +16,10 @@ class SearchResultTableViewCell: UITableViewCell {
 
     static let cellHeight: CGFloat = 70
 
-    func setupCell(nutrition: Nutrition) {
-        self.foodNameLabel.text = nutrition.foodName
-        self.proteinQuantityLabel.text = nutrition.protein.description
-        self.fatQuantityLabel.text = nutrition.fat.description
-        self.carboQuantityLabel.text = nutrition.carbohydrate.description
+    func setupCell(food: Food) {
+        self.foodNameLabel.text = food.foodName
+        self.proteinQuantityLabel.text = food.getNutritionValueOf(.protein).description
+        self.fatQuantityLabel.text = food.getNutritionValueOf(.fat).description
+        self.carboQuantityLabel.text = food.getNutritionValueOf(.carbohydrate).description
     }
-
-//    func setupCellAppearance() {
-//        self.percentageBackgroundView.layer.cornerRadius = 10
-//        self.percentageBackgroundView.layer.shadowOffset = CGSize(width: 5, height: 5)
-//        self.percentageBackgroundView.layer.shadowOpacity = 0.5
-//
-//    }
 }

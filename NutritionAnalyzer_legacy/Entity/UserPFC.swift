@@ -18,6 +18,14 @@ struct UserPFC : Codable, FetchableRecord, MutablePersistableRecord {
         return "tbl_user_pfc"
     }
 
+    init(food: Food) {
+        self.foodId = food.index
+        self.foodName = food.foodName
+        self.protein = food.getNutritionValueOf(.protein)
+        self.fat = food.getNutritionValueOf(.fat)
+        self.carbohydrate = food.getNutritionValueOf(.carbohydrate)
+    }
+
     static func create(_ db: Database) throws {
         try db.create(table: databaseTableName, body: { (t: TableDefinition) in
             t.column("foodId", .integer).primaryKey()

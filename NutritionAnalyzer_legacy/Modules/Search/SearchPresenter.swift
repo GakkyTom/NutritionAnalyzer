@@ -10,7 +10,7 @@ import Foundation
 protocol SearchPresentation: AnyObject {
     func viewDidLoad()
     func searchButtonTapped(_ foodName: String)
-    func didSelectRow(food: Nutrition)
+    func didSelectRow(food: Food)
 }
 
 class SearchPresenter {
@@ -39,7 +39,7 @@ extension SearchPresenter: SearchPresentation {
         view?.updateTableView(data: data)
     }
 
-    func didSelectRow(food: Nutrition) {
+    func didSelectRow(food: Food) {
         router.showDetailOf(food)
     }
 }
