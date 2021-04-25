@@ -11,8 +11,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailViewController" customModule="NutritionAnalyzer_legacy" customModuleProvider="target">
             <connections>
                 <outlet property="calcFieldView" destination="nwm-Pl-Hqo" id="Pho-Up-8qs"/>
-                <outlet property="calcTextField" destination="oEv-UE-zko" id="ifX-y0-zoT"/>
                 <outlet property="foodNameLabel" destination="2eu-vY-Wua" id="2iu-rH-jpU"/>
+                <outlet property="gramTextField" destination="oEv-UE-zko" id="ifX-y0-zoT"/>
                 <outlet property="tableView" destination="CFY-XO-6uB" id="GWo-1t-4xx"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

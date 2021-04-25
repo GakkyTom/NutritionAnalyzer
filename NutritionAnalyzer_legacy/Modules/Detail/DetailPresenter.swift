@@ -10,7 +10,7 @@ import Foundation
 protocol DetailPresentation: AnyObject {
     func viewDidLoad()
     func addButtonTapped()
-    func calcButtonTapped()
+    func calcButtonTapped(foodQt: Float)
 }
 
 class DetailPresenter {
@@ -18,6 +18,7 @@ class DetailPresenter {
     private let router: DetailWireframe
     private let searchFoodInteractor: SearchFoodUsecase
     private let food: Food
+    private var calcedFood: Food
 
     init(view: DetailView,
          router: DetailWireframe,
@@ -27,6 +28,7 @@ class DetailPresenter {
         self.router = router
         self.searchFoodInteractor = searchFoodInteractor
         self.food = food
+        self.calcedFood = food
     }
 }
 
@@ -41,7 +43,11 @@ extension DetailPresenter: DetailPresentation {
         view?.closeDetail()
     }
 
-    func calcButtonTapped() {
-        view?.calcNutrition()
+    func calcButtonTapped(foodQt: Float) {
+        let calcedNutritions = food.nutritions.map {
+            Nutrition(nutritionName: $0.nutritionName, value: $0.value * foodQt / 100)
+        }
+
+        view?.updateNutritions(nutritions: calcedNutritions)
     }
 }
