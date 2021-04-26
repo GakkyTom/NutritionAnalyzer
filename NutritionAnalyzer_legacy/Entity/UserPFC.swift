@@ -13,17 +13,11 @@ struct UserPFC : Codable, FetchableRecord, MutablePersistableRecord {
     var protein: Float
     var fat: Float
     var carbohydrate: Float
+    var foodQt: Float
+    var eatDate: Date
 
     static var databaseTableName: String {
         return "tbl_user_pfc"
-    }
-
-    init(food: Food) {
-        self.foodId = food.index
-        self.foodName = food.foodName
-        self.protein = food.getNutritionValueOf(.protein)
-        self.fat = food.getNutritionValueOf(.fat)
-        self.carbohydrate = food.getNutritionValueOf(.carbohydrate)
     }
 
     static func create(_ db: Database) throws {
@@ -33,6 +27,8 @@ struct UserPFC : Codable, FetchableRecord, MutablePersistableRecord {
             t.column("protein", .double).notNull()
             t.column("fat", .double).notNull()
             t.column("carbohydrate", .double).notNull()
+            t.column("foodQt", .double).notNull()
+            t.column("eatDate", .date).notNull()
         })
     }
 }

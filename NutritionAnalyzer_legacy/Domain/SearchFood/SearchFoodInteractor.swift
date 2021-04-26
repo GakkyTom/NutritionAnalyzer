@@ -12,7 +12,7 @@ protocol SearchFoodUsecase: AnyObject {
     func refresh()
     func getFoodBy(_ name: String) -> [Food]
     func add(food: Food)
-    func insert(food: Food)
+    func insert(food: Food, foodQt: Float, eatDate: Date)
     func isExistsUserData() -> Bool
     func delete()
 }
@@ -54,9 +54,9 @@ extension SearchFoodInteractor: SearchFoodUsecase {
         userData.append(food)
     }
 
-    func insert(food: Food) {
+    func insert(food: Food, foodQt: Float, eatDate: Date) {
         helper.inDatabase { (db) in
-            var entity = UserPFC(food: food)
+            var entity = createUserPFC(food: food, foodQt: foodQt, eatDate: eatDate)
             try entity.insert(db)
         }
     }
@@ -74,5 +74,15 @@ extension SearchFoodInteractor: SearchFoodUsecase {
         helper.inDatabase { (db) in
             try UserPFC.deleteAll(db)
         }
+    }
+
+    private func createUserPFC(food: Food, foodQt: Float, eatDate: Date) -> UserPFC {
+        return UserPFC(foodId: food.index,
+                       foodName: food.foodName,
+                       protein: food.getNutritionValueOf(.protein),
+                       fat: food.getNutritionValueOf(.fat),
+                       carbohydrate: food.getNutritionValueOf(.carbohydrate),
+                       foodQt: foodQt,
+                       eatDate: eatDate)
     }
 }

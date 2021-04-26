@@ -15,10 +15,17 @@ protocol DetailView: AnyObject {
 }
 
 class DetailViewController: UIViewController, UIGestureRecognizerDelegate {
+
+    var presenter: DetailPresentation!
+    var food: Food!
+    private let cellIdentifier = "DetailTableViewCell"
+    private var tapGestureRecognizer : UITapGestureRecognizer!
+
     @IBOutlet weak var foodNameLabel: UILabel!
     @IBOutlet weak var calcFieldView: UIView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var gramTextField: UITextField!
+    @IBOutlet weak var eatDatePicker: UIDatePicker!
 
     @IBAction func calcButtonTapped(_ sender: Any) {
         if let gramString = gramTextField.text,
@@ -30,14 +37,11 @@ class DetailViewController: UIViewController, UIGestureRecognizerDelegate {
     }
 
     @IBAction func addButtonTapped(_ sender: Any) {
-        presenter.addButtonTapped()
-    }
-    
-    var presenter: DetailPresentation!
-    var food: Food!
-    private let cellIdentifier = "DetailTableViewCell"
-    private var tapGestureRecognizer : UITapGestureRecognizer!
 
+        let foodQt: Float = gramTextField.text! == "" ? 100 : Float(gramTextField.text!)!
+
+        presenter.addButtonTapped(food: food, foodQt: foodQt, eatDate: eatDatePicker.date)
+    }
 
     //
     // MARK: override method

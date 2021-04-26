@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailViewController" customModule="NutritionAnalyzer_legacy" customModuleProvider="target">
             <connections>
                 <outlet property="calcFieldView" destination="nwm-Pl-Hqo" id="Pho-Up-8qs"/>
+                <outlet property="eatDatePicker" destination="Y2C-13-8h2" id="Bbe-li-cpa"/>
                 <outlet property="foodNameLabel" destination="2eu-vY-Wua" id="2iu-rH-jpU"/>
                 <outlet property="gramTextField" destination="oEv-UE-zko" id="ifX-y0-zoT"/>
                 <outlet property="tableView" destination="CFY-XO-6uB" id="GWo-1t-4xx"/>
@@ -23,7 +24,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nwm-Pl-Hqo" userLabel="Calc Field View">
-                    <rect key="frame" x="132" y="759" width="150" height="45"/>
+                    <rect key="frame" x="213" y="759" width="150" height="45"/>
                     <subviews>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oEv-UE-zko">
                             <rect key="frame" x="16" y="5.5" width="50" height="34"/>
@@ -66,32 +67,42 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ya-uC-YHo">
-                    <rect key="frame" x="192" y="812" width="30" height="30"/>
+                    <rect key="frame" x="189" y="812" width="36" height="30"/>
                     <state key="normal" title="Add"/>
                     <connections>
                         <action selector="addButtonTapped:" destination="-1" eventType="touchUpInside" id="2R5-gN-hXh"/>
                     </connections>
                 </button>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CFY-XO-6uB">
-                    <rect key="frame" x="0.0" y="89.5" width="414" height="652.5"/>
+                    <rect key="frame" x="0.0" y="89.5" width="414" height="653.5"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
+                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="Y2C-13-8h2">
+                    <rect key="frame" x="60" y="761" width="123" height="36"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="123" id="0TT-2p-4Fe"/>
+                        <constraint firstAttribute="height" constant="36" id="xNX-ET-qUd"/>
+                    </constraints>
+                </datePicker>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="Y2C-13-8h2" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="60" id="2jc-Qw-V1w"/>
                 <constraint firstItem="9ya-uC-YHo" firstAttribute="top" secondItem="nwm-Pl-Hqo" secondAttribute="bottom" constant="8" id="9g6-rh-cNy"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="nwm-Pl-Hqo" secondAttribute="trailing" constant="51" id="9yK-Vg-YPm"/>
                 <constraint firstItem="CFY-XO-6uB" firstAttribute="top" secondItem="2eu-vY-Wua" secondAttribute="bottom" constant="10" id="Cv2-sh-4P2"/>
                 <constraint firstItem="9ya-uC-YHo" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="H28-wM-jhm"/>
                 <constraint firstItem="CFY-XO-6uB" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="JNE-Ta-yde"/>
                 <constraint firstItem="CFY-XO-6uB" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="KBX-JA-1ho"/>
-                <constraint firstItem="nwm-Pl-Hqo" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Tp8-vx-Zzs"/>
+                <constraint firstItem="9ya-uC-YHo" firstAttribute="leading" secondItem="Y2C-13-8h2" secondAttribute="trailing" constant="6" id="MtR-1m-Syu"/>
                 <constraint firstItem="2eu-vY-Wua" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="bVz-lm-y1M"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="2eu-vY-Wua" secondAttribute="trailing" constant="16" id="gg2-SD-GaV"/>
                 <constraint firstItem="2eu-vY-Wua" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="guA-ee-05X"/>
+                <constraint firstItem="Y2C-13-8h2" firstAttribute="top" secondItem="CFY-XO-6uB" secondAttribute="bottom" constant="18" id="ilw-lh-orN"/>
                 <constraint firstItem="2eu-vY-Wua" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="15" id="qng-6O-LIY"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="9ya-uC-YHo" secondAttribute="bottom" constant="20" id="s21-uA-dqa"/>
-                <constraint firstItem="nwm-Pl-Hqo" firstAttribute="top" secondItem="CFY-XO-6uB" secondAttribute="bottom" constant="17" id="yue-C7-xjp"/>
+                <constraint firstItem="nwm-Pl-Hqo" firstAttribute="top" secondItem="CFY-XO-6uB" secondAttribute="bottom" constant="16" id="yue-C7-xjp"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="-20.289855072463769" y="71.651785714285708"/>

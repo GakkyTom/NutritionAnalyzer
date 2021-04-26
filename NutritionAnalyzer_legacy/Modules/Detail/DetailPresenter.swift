@@ -9,7 +9,7 @@ import Foundation
 
 protocol DetailPresentation: AnyObject {
     func viewDidLoad()
-    func addButtonTapped()
+    func addButtonTapped(food: Food, foodQt: Float, eatDate: Date)
     func calcButtonTapped(foodQt: Float)
 }
 
@@ -38,8 +38,8 @@ extension DetailPresenter: DetailPresentation {
         view?.updateData(food: food)
     }
 
-    func addButtonTapped() {
-        searchFoodInteractor.insert(food: food)
+    func addButtonTapped(food: Food, foodQt: Float, eatDate: Date) {
+        searchFoodInteractor.insert(food: food, foodQt: foodQt, eatDate: eatDate)
         view?.closeDetail()
     }
 
