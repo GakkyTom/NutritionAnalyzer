@@ -7,101 +7,95 @@
 
 import UIKit
 
-protocol HomeView: AnyObject { }
+protocol HomeView: AnyObject {
+    func setupLabels(periodLabel: String)
+    func setupDatePicker()
+}
 
 class HomeViewController: UIViewController {
-
-    @IBOutlet weak var proteinLabel: UILabel!
-    @IBOutlet weak var fatLabel: UILabel!
-    @IBOutlet weak var carbohydrateLabel: UILabel!
-    @IBOutlet weak var scrollView: UIScrollView!
-
     var presenter: HomePresentation!
-    private let refreshCtl = UIRefreshControl()
-    // ① PageViewControllerクラス、
-    // 　 PageViewで表示するViewControllerを格納する配列をそれぞれ定義
-    private var pageViewController: UIPageViewController!
-    private var controllers: [ UIViewController ] = []
+
+    private let FONT_NAME_HIRAGINOKAKU_BOLD = "HiraKakuProN-W6"
+    private var datePickerGestureRecognizer = UITapGestureRecognizer()
+    private let datePicker: UIDatePicker = {
+        let dp = UIDatePicker()
+        dp.datePickerMode = UIDatePicker.Mode.date
+        if #available(iOS 13.4, *) {
+            dp.preferredDatePickerStyle = UIDatePickerStyle.wheels
+        }
+        dp.locale = .current
+        return dp
+    }()
+
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var periodLabel: UILabel!
+    @IBOutlet weak var hiddenTextField: UITextField!
+
+    @IBAction func onTapChangePeriod(_ sender: Any) {
+        self.hiddenTextField.becomeFirstResponder()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = "Home"
-
-//        refresh()
-
-        self.initPageViewController()
-
-        refreshCtl.addTarget(self, action: #selector(self.refresh(sender:)), for: .valueChanged)
-//        scrollView.refreshControl = refreshCtl
-    }
-    private func initPageViewController() {
-
-        // 背景色定義
-        let backColor: [ UIColor ] = [ .systemIndigo, .systemOrange, .systemGreen ]
-
-        // ② 表示するViewController作成 & 表示配列に保存
-        for i in 0 ... 2 {
-            let myViewController: UIViewController = UIViewController()
-            myViewController.view.backgroundColor = backColor[i]
-            myViewController.view.frame = self.view.frame
-            self.controllers.append(myViewController)
-        }
-        // ③ UIPageViewController設定
-        self.pageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
-        self.pageViewController.setViewControllers([self.controllers[0]], direction: .forward, animated: true, completion: nil)
-        self.pageViewController.dataSource = self
-
-        // ④既存ViewControllerに追加
-        self.addChild(self.pageViewController)
-        self.view.addSubview(self.pageViewController.view!)
-    }
-    private func refresh() {
-        let data = presenter.fetchUserData()
-        data.forEach { (userPfc) in
-            proteinLabel.text = "Protein: \(self.presenter.sumup("protein"))"
-            fatLabel.text = "Fat: \(self.presenter.sumup("fat"))"
-            carbohydrateLabel.text = "Carbohydrate: \(self.presenter.sumup("carbohydrate"))"
-        }
+        presenter.viewDidLoad()
     }
 
-    @objc func refresh(sender: UIRefreshControl) {
-        refresh()
-        sender.endRefreshing()
+
+    @objc func hideDatePicker(gesture : UITapGestureRecognizer) {
+        self.view.gestureRecognizers?.removeAll()
+        self.hiddenTextField.resignFirstResponder()
+    }
+
+    @objc func dateChange() {
+        presenter.refreshView(periodStart: self.datePicker.date)
+
+        // DatePicker初期化
+        self.hiddenTextField.text = ""
+        self.datePicker.date = Date()
+
+        self.view.removeGestureRecognizer(self.datePickerGestureRecognizer)
+
+        self.hiddenTextField.endEditing(true)
+    }
+
+    @objc func cancelled() {
+        // DatePicker初期化
+        self.hiddenTextField.text = ""
+        self.datePicker.date = Date()
+
+        self.view.removeGestureRecognizer(self.datePickerGestureRecognizer)
+
+        self.hiddenTextField.endEditing(true)
+    }
+
+    private func addDatePickerGestureRecognizer() {
+        // ダイアログの外タップで、ダイアログ閉じる用GestureRecognizer
+        self.datePickerGestureRecognizer = UITapGestureRecognizer.init(target: self,
+                                                                       action: #selector(self.hideDatePicker(gesture:)))
+        self.view.addGestureRecognizer(self.datePickerGestureRecognizer)
     }
 }
 
 extension HomeViewController: HomeView {
-    
-}
-
-// ⑤ PageViewControllerのDataSourceを定義
-// MARK: - UIPageViewController DataSource
-extension HomeViewController: UIPageViewControllerDataSource {
-
-    /// ページ数
-    func presentationCount(for pageViewController: UIPageViewController) -> Int {
-        return self.controllers.count
+    func setupLabels(periodLabel: String) {
+        self.title = "Home"
+        self.periodLabel.text = periodLabel
     }
 
-    /// 左にスワイプ（進む）
-    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        if let index = self.controllers.firstIndex(of: viewController),
-            index < self.controllers.count - 1 {
-            return self.controllers[index + 1]
-        } else {
-            return nil
-        }
-    }
+    //
+    // MARK: DatePicker設定
+    //
+    func setupDatePicker() {
+        // 隠しているTextFieldViewにフォーカスを当ててDatePickerを表示する
+        self.hiddenTextField.inputView = datePicker
 
-    /// 右にスワイプ （戻る）
-    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        if let index = self.controllers.firstIndex(of: viewController),
-            index > 0 {
-            return self.controllers[index - 1]
-        } else {
-            return nil
-        }
-    }
+        let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 40))
+        let spacelItem = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+        let doneItem = UIBarButtonItem(title: "変更", style: .done, target: self, action: #selector(dateChange))
+        let cancelItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancelled))
+        toolbar.setItems([cancelItem, spacelItem, doneItem], animated: true)
 
+        self.hiddenTextField.inputAccessoryView = toolbar
+    }
 }

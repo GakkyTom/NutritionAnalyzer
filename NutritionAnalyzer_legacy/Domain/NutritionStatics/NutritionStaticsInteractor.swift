@@ -9,7 +9,7 @@ import Foundation
 
 protocol NutritionStaticsUsecase: AnyObject {
     func fetch() -> [UserPFC]
-    func sumup(_ target: String) -> Double
+    func sumup(_ target: NutritionName) -> Double
 }
 
 class NutritionStaticsInteractor {
@@ -27,12 +27,12 @@ extension NutritionStaticsInteractor: NutritionStaticsUsecase {
         return result
     }
 
-    func sumup(_ target: String) -> Double {
+    func sumup(_ target: NutritionName) -> Double {
         var result = 0.0
         helper.inDatabase { (db) in
             let rawSQL = """
                 SELECT
-                SUM(\(target))
+                SUM(\(target.rawValue))
                 FROM
                 \(UserPFC.databaseTableName)
             """

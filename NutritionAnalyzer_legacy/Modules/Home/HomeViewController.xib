@@ -10,6 +10,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="NutritionAnalyzer_legacy" customModuleProvider="target">
             <connections>
+                <outlet property="hiddenTextField" destination="UfO-fF-qWN" id="XeV-7q-fXL"/>
+                <outlet property="periodLabel" destination="BOh-9I-GYJ" id="BcE-sR-TxW"/>
+                <outlet property="tableView" destination="64O-wb-MHr" id="MOb-5J-8Mi"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,8 +20,44 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="64O-wb-MHr">
+                    <rect key="frame" x="0.0" y="125" width="414" height="737"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20xx/xx/xx ~ 20xx/xx/xx" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BOh-9I-GYJ" userLabel="Period Label">
+                    <rect key="frame" x="117" y="74" width="180" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uQy-Rs-RCj" userLabel="Change Period Button">
+                    <rect key="frame" x="327" y="74" width="62" height="30"/>
+                    <state key="normal" title="期間変更"/>
+                    <connections>
+                        <action selector="onTapChangePeriod:" destination="-1" eventType="touchUpInside" id="363-kO-h7s"/>
+                    </connections>
+                </button>
+                <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UfO-fF-qWN" userLabel="Hidden Text Field">
+                    <rect key="frame" x="0.0" y="44" width="32" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="64O-wb-MHr" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="0bc-ep-SaV"/>
+                <constraint firstItem="uQy-Rs-RCj" firstAttribute="leading" secondItem="BOh-9I-GYJ" secondAttribute="trailing" constant="30" id="8te-oF-VcZ"/>
+                <constraint firstItem="uQy-Rs-RCj" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="30" id="Evc-rg-gcO"/>
+                <constraint firstItem="64O-wb-MHr" firstAttribute="top" secondItem="BOh-9I-GYJ" secondAttribute="bottom" constant="30" id="F6d-OU-9EW"/>
+                <constraint firstItem="UfO-fF-qWN" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Nmw-07-8Ty"/>
+                <constraint firstItem="BOh-9I-GYJ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Ohg-dh-Mmz"/>
+                <constraint firstItem="64O-wb-MHr" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="iRz-rD-c5e"/>
+                <constraint firstItem="BOh-9I-GYJ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="30" id="oJ4-20-nVs"/>
+                <constraint firstItem="UfO-fF-qWN" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="sH1-sf-WA0"/>
+                <constraint firstItem="64O-wb-MHr" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="xol-DE-JGn"/>
+            </constraints>
             <point key="canvasLocation" x="-62.318840579710148" y="57.589285714285708"/>
         </view>
     </objects>

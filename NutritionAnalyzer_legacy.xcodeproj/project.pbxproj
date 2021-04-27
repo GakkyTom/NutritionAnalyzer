@@ -25,6 +25,8 @@
 		5C36A506261A1B1400E9A6D4 /* Nutrition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C36A505261A1B1400E9A6D4 /* Nutrition.swift */; };
 		5C36A51E261B570E00E9A6D4 /* NutritionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C36A51D261B570E00E9A6D4 /* NutritionTableViewCell.xib */; };
 		5C36A526261B575F00E9A6D4 /* NutritionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C36A525261B575F00E9A6D4 /* NutritionTableViewCell.swift */; };
+		5C8B87BC263869C3004EF587 /* DateFormatterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8B87BB263869C3004EF587 /* DateFormatterExtension.swift */; };
+		5C8B87C226386A3C004EF587 /* CalendarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8B87C126386A3C004EF587 /* CalendarExtension.swift */; };
 		5CAA2F99262ED94300547E30 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAA2F98262ED94300547E30 /* AppRouter.swift */; };
 		5CAA2F9F262ED95700547E30 /* AppPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAA2F9E262ED95700547E30 /* AppPresenter.swift */; };
 		5CBA175F262EDB52007B3B40 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBA175D262EDB52007B3B40 /* HomeViewController.swift */; };
@@ -94,6 +96,8 @@
 		5C36A505261A1B1400E9A6D4 /* Nutrition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nutrition.swift; sourceTree = "<group>"; };
 		5C36A51D261B570E00E9A6D4 /* NutritionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NutritionTableViewCell.xib; sourceTree = "<group>"; };
 		5C36A525261B575F00E9A6D4 /* NutritionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionTableViewCell.swift; sourceTree = "<group>"; };
+		5C8B87BB263869C3004EF587 /* DateFormatterExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterExtension.swift; sourceTree = "<group>"; };
+		5C8B87C126386A3C004EF587 /* CalendarExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarExtension.swift; sourceTree = "<group>"; };
 		5CAA2F98262ED94300547E30 /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
 		5CAA2F9E262ED95700547E30 /* AppPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppPresenter.swift; sourceTree = "<group>"; };
 		5CBA175D262EDB52007B3B40 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -184,6 +188,7 @@
 		5C36A4CC261A1AB700E9A6D4 /* NutritionAnalyzer_legacy */ = {
 			isa = PBXGroup;
 			children = (
+				5C8B87BA263869AB004EF587 /* Extension */,
 				5C36A500261A1B0300E9A6D4 /* nutrition_labels_fact.json */,
 				5C36A4DB261A1ABA00E9A6D4 /* Info.plist */,
 				5C36A4D6261A1ABA00E9A6D4 /* Assets.xcassets */,
@@ -238,6 +243,15 @@
 				5CBDA74B261E009900CF1028 /* UserPFC.swift */,
 			);
 			path = Entity;
+			sourceTree = "<group>";
+		};
+		5C8B87BA263869AB004EF587 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				5C8B87BB263869C3004EF587 /* DateFormatterExtension.swift */,
+				5C8B87C126386A3C004EF587 /* CalendarExtension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		5CA85B6F261F4B36000B9D4C /* Storyboard */ = {
@@ -621,12 +635,14 @@
 			files = (
 				5CAA2F9F262ED95700547E30 /* AppPresenter.swift in Sources */,
 				5CBA1791262EDEB7007B3B40 /* DetailPresenter.swift in Sources */,
+				5C8B87BC263869C3004EF587 /* DateFormatterExtension.swift in Sources */,
 				5CBA1772262EDC55007B3B40 /* SearchRouter.swift in Sources */,
 				5CBA176D262EDB83007B3B40 /* HomeRouter.swift in Sources */,
 				5C36A506261A1B1400E9A6D4 /* Nutrition.swift in Sources */,
 				5C1FC84C263462F10065BBAD /* Food.swift in Sources */,
 				5CBA179E262EE20B007B3B40 /* NutritionStaticsInteractor.swift in Sources */,
 				5C36A4CE261A1AB700E9A6D4 /* AppDelegate.swift in Sources */,
+				5C8B87C226386A3C004EF587 /* CalendarExtension.swift in Sources */,
 				5C36A526261B575F00E9A6D4 /* NutritionTableViewCell.swift in Sources */,
 				5CBA1768262EDB76007B3B40 /* HomePresenter.swift in Sources */,
 				5CBA1788262EDDD0007B3B40 /* DetailViewController.swift in Sources */,
