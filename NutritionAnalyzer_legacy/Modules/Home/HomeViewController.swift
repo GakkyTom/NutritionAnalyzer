@@ -41,6 +41,9 @@ class HomeViewController: UIViewController {
         presenter.viewDidLoad()
     }
 
+    //
+    // MARK: @objc
+    //
 
     @objc func hideDatePicker(gesture : UITapGestureRecognizer) {
         self.view.gestureRecognizers?.removeAll()
@@ -50,24 +53,20 @@ class HomeViewController: UIViewController {
     @objc func dateChange() {
         presenter.refreshView(periodStart: self.datePicker.date)
 
-        // DatePicker初期化
-        self.hiddenTextField.text = ""
-        self.datePicker.date = Date()
-
         self.view.removeGestureRecognizer(self.datePickerGestureRecognizer)
 
         self.hiddenTextField.endEditing(true)
     }
 
     @objc func cancelled() {
-        // DatePicker初期化
-        self.hiddenTextField.text = ""
-        self.datePicker.date = Date()
-
         self.view.removeGestureRecognizer(self.datePickerGestureRecognizer)
 
         self.hiddenTextField.endEditing(true)
     }
+
+    //
+    // MARK: private method
+    //
 
     private func addDatePickerGestureRecognizer() {
         // ダイアログの外タップで、ダイアログ閉じる用GestureRecognizer
@@ -78,14 +77,12 @@ class HomeViewController: UIViewController {
 }
 
 extension HomeViewController: HomeView {
+    // view側では、Presenterから必要な情報をもらってViewにセットするだけ
     func setupLabels(periodLabel: String) {
         self.title = "Home"
         self.periodLabel.text = periodLabel
     }
 
-    //
-    // MARK: DatePicker設定
-    //
     func setupDatePicker() {
         // 隠しているTextFieldViewにフォーカスを当ててDatePickerを表示する
         self.hiddenTextField.inputView = datePicker
@@ -97,5 +94,7 @@ extension HomeViewController: HomeView {
         toolbar.setItems([cancelItem, spacelItem, doneItem], animated: true)
 
         self.hiddenTextField.inputAccessoryView = toolbar
+
+        self.addDatePickerGestureRecognizer()
     }
 }
