@@ -6,15 +6,25 @@
 //
 
 import Foundation
+import GRDB
 
-struct Food: Decodable {
+// 食材のマスタデータ
+struct Food: Codable, FetchableRecord, MutablePersistableRecord {
     var category: String
     var foodNumber: String
-    var index: Int
+    var index: Int          // 他ではfoodIdと合致
     var foodName: String
-    var nutritions: [Nutrition]
 
-    func getNutritionValueOf(_ nutritionName: NutritionName) -> Float {
-        return nutritions[nutritionName.rawValue].value
+    static var databaseTableName: String {
+        return "tbl_food"
+    }
+
+    static func create(_ db: Database) throws {
+        try db.create(table: databaseTableName, body: { (t: TableDefinition) in
+            t.column("category", .integer).primaryKey()
+            t.column("foodNumber", .integer).notNull()
+            t.column("index", .text).notNull()
+            t.column("foodName", .double).notNull()
+        })
     }
 }

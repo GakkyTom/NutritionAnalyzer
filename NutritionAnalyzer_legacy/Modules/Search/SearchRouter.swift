@@ -25,7 +25,7 @@ class SearchRouter {
         view.tabBarItem = UITabBarItem(title: "Search", image: UIImage(named: "search"), selectedImage: UIImage(named: "search"))
 
         let router = SearchRouter(viewController: view)
-        let searchFoodInteractor = SearchFoodInteractor()
+        let searchFoodInteractor = FoodInteractor()
 
         let presenter = SearchPresenter(view: view, router: router, searchFoodInteractor: searchFoodInteractor)
 

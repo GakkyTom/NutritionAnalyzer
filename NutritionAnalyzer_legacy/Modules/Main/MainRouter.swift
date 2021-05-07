@@ -34,6 +34,7 @@ class MainRouter {
         return view
     }
 
+    /// タブのViewControllerを返す
     static func getViewControllers() -> [UIViewController] {
         return [
             HomeRouter.assembleModules(),

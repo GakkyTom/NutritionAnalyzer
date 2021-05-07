@@ -15,6 +15,7 @@ protocol HomeView: AnyObject {
 class HomeViewController: UIViewController {
     var presenter: HomePresentation!
 
+    private let cellIdentifier = "DetailTableViewCell"
     private let FONT_NAME_HIRAGINOKAKU_BOLD = "HiraKakuProN-W6"
     private var datePickerGestureRecognizer = UITapGestureRecognizer()
     private let datePicker: UIDatePicker = {
@@ -96,5 +97,28 @@ extension HomeViewController: HomeView {
         self.hiddenTextField.inputAccessoryView = toolbar
 
         self.addDatePickerGestureRecognizer()
+    }
+
+    func setupTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        self.tableView.register(UINib(nibName: cellIdentifier, bundle: nil), forCellReuseIdentifier: cellIdentifier)
+    }
+}
+
+extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        presenter.getUserNutrition().count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! DetailTableViewCell
+        cell.setupCell(nutrition: presenter.getUserNutritionOf(indexPath.row))
+
+        return cell
+    }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return DetailTableViewCell.cellHeight
     }
 }

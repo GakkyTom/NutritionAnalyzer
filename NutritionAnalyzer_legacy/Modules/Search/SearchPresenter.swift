@@ -16,11 +16,11 @@ protocol SearchPresentation: AnyObject {
 class SearchPresenter {
     private weak var view: SearchView?
     private let router: SearchWireframe
-    private let searchFoodInteractor: SearchFoodInteractor
+    private let searchFoodInteractor: FoodInteractor
 
     init(view: SearchView,
          router: SearchWireframe,
-         searchFoodInteractor: SearchFoodInteractor) {
+         searchFoodInteractor: FoodInteractor) {
         self.view = view
         self.router = router
         self.searchFoodInteractor = searchFoodInteractor

@@ -24,12 +24,14 @@ class HomeRouter {
         view.tabBarItem = UITabBarItem(title: "home", image: UIImage(named: "home"), selectedImage: UIImage(named: "home"))
 
         let router = HomeRouter(viewController: view)
-        let nutritionStaticsInteractor = NutritionStaticsInteractor()
+        let nutritionInteractor = NutritionInteractor()
+        let userFoodInteractor = UserFoodInteractor()
 
         let presenter = HomePresenter(
             view: view,
             router: router,
-            nutritionStaticsInteractor: nutritionStaticsInteractor
+            nutritionInteractor: nutritionInteractor,
+            userFoodInteractor: userFoodInteractor
         )
 
         view.presenter = presenter
@@ -39,5 +41,5 @@ class HomeRouter {
 }
 
 extension HomeRouter: HomeWireframe {
-
+    // TODO: 栄養素詳細へのRouting
 }

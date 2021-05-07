@@ -11,7 +11,10 @@ protocol DetailView: AnyObject {
     func updateLabels(food: Food)
     func updateData(food: Food)
     func closeDetail()
-    func updateNutritions(nutritions: [Nutrition])
+    func updateNutritions(nutritions: [FoodNutrition])
+    func setupTableView()
+    func setupKeyboard()
+    func setupGestureRecognizer()
 }
 
 class DetailViewController: UIViewController, UIGestureRecognizerDelegate {
@@ -29,8 +32,8 @@ class DetailViewController: UIViewController, UIGestureRecognizerDelegate {
 
     @IBAction func calcButtonTapped(_ sender: Any) {
         if let gramString = gramTextField.text,
-           let gramFloat = Float(gramString) {
-            presenter.calcButtonTapped(foodQt: gramFloat)
+           let gramDouble = Double(gramString) {
+            presenter.calcButtonTapped(foodQt: gramDouble)
         }
 
         self.gramTextField.resignFirstResponder()
@@ -38,7 +41,7 @@ class DetailViewController: UIViewController, UIGestureRecognizerDelegate {
 
     @IBAction func addButtonTapped(_ sender: Any) {
 
-        let foodQt: Float = gramTextField.text! == "" ? 100 : Float(gramTextField.text!)!
+        let foodQt: Double = gramTextField.text! == "" ? 100 : Double(gramTextField.text!)!
 
         presenter.addButtonTapped(food: food, foodQt: foodQt, eatDate: eatDatePicker.date)
     }
@@ -52,36 +55,13 @@ class DetailViewController: UIViewController, UIGestureRecognizerDelegate {
 
         presenter.viewDidLoad()
 
-        setupTableView()
-        setupKeyboard()
-        setupGestureRecognizer()
+
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
-    }
-
-    //
-    // MARK: private method
-    //
-
-    private func setupTableView() {
-        tableView.delegate = self
-        tableView.dataSource = self
-        self.tableView.register(UINib(nibName: cellIdentifier, bundle: nil), forCellReuseIdentifier: cellIdentifier)
-    }
-
-    private func setupKeyboard() {
-        self.gramTextField.delegate = self
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-    }
-
-    private func setupGestureRecognizer() {
-        self.tapGestureRecognizer = UITapGestureRecognizer.init(target: self, action: #selector(self.gestureRecognizerAction))
-        self.tapGestureRecognizer.delegate = self
     }
 
     //
@@ -124,9 +104,26 @@ extension DetailViewController: DetailView {
         self.navigationController?.popViewController(animated: true)
     }
 
-    func updateNutritions(nutritions: [Nutrition]) {
+    func updateNutritions(nutritions: [FoodNutrition]) {
         food.nutritions = nutritions
         tableView.reloadData()
+    }
+
+    func setupTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        self.tableView.register(UINib(nibName: cellIdentifier, bundle: nil), forCellReuseIdentifier: cellIdentifier)
+    }
+
+    func setupKeyboard() {
+        self.gramTextField.delegate = self
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+
+    func setupGestureRecognizer() {
+        self.tapGestureRecognizer = UITapGestureRecognizer.init(target: self, action: #selector(self.gestureRecognizerAction))
+        self.tapGestureRecognizer.delegate = self
     }
 }
 

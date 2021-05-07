@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum NutritionName: Int {
+enum NutritionName: String, CaseIterable {
     case disposalRate
     case energy
     case energyKcal

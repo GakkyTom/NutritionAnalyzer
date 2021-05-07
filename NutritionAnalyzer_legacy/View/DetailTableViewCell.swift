@@ -19,7 +19,7 @@ class DetailTableViewCell: UITableViewCell {
         self.nutritionValueLabel.text = nutrition.value.description
     }
 
-    func reCalcCell(nutrition: Nutrition, g: Float) {
+    func reCalcCell(nutrition: Nutrition, g: Double) {
         self.nutritionValueLabel.text = (nutrition.value * g / 100).description
     }
 }

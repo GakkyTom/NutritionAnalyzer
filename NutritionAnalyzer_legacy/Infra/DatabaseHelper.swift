@@ -31,7 +31,7 @@ class DatabaseHelper {
 
     func createDatabase() {
         let result = inDatabase { (db) in
-            try UserPFC.create(db)
+            try UserFood.create(db)
         }
 
         if !result {
