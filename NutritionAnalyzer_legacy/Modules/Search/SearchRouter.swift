@@ -9,7 +9,7 @@
 import UIKit
 
 protocol SearchWireframe: AnyObject {
-    func showDetailOf(_ food: Food)
+    func showDetailOf(_ foodId: Int)
 }
 
 class SearchRouter {
@@ -36,8 +36,8 @@ class SearchRouter {
 }
 
 extension SearchRouter: SearchWireframe {
-    func showDetailOf(_ food: Food) {
-        let detailView = DetailRouter.assembleModules(food: food)
+    func showDetailOf(_ foodId: Int) {
+        let detailView = DetailRouter.assembleModules(foodId: foodId)
 
         // ここで、init時に受け取ったViewControllerを使う
         viewController.navigationController?.pushViewController(detailView, animated: true)

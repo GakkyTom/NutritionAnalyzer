@@ -19,7 +19,7 @@ class DetailRouter {
     }
 
     // DI
-    static func assembleModules(food: Food) -> UIViewController {
+    static func assembleModules(foodId: Int) -> UIViewController {
         let view = DetailViewController()
         let router = DetailRouter(viewController: view)
         let searchFoodInteractor = FoodInteractor()
@@ -28,7 +28,7 @@ class DetailRouter {
             view: view,
             router: router,
             searchFoodInteractor: searchFoodInteractor,
-            food: food
+            foodId: foodId
         )
 
         view.presenter = presenter

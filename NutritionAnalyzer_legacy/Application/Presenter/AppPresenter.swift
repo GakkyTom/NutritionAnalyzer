@@ -17,10 +17,17 @@ class AppPresenter {
     init(router: AppWireframe) {
         self.router = router
     }
+
+    private func initDBIfNeeded() {
+        let helper = DatabaseHelper()
+        helper.createDatabase()
+    }
 }
 
 extension AppPresenter: AppPresentation {
     func didFinishLaunch() {
         router.showMainView()
+
+        initDBIfNeeded()
     }
 }

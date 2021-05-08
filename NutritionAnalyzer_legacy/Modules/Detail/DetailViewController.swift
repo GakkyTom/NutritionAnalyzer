@@ -8,10 +8,10 @@
 import UIKit
 
 protocol DetailView: AnyObject {
-    func updateLabels(food: Food)
-    func updateData(food: Food)
+    func updateLabels(foodDetail: FoodDetail)
+    func updateData(foodDetail: FoodDetail)
     func closeDetail()
-    func updateNutritions(nutritions: [FoodNutrition])
+    func updateNutritions(nutritions: [Nutrition])
     func setupTableView()
     func setupKeyboard()
     func setupGestureRecognizer()
@@ -20,7 +20,7 @@ protocol DetailView: AnyObject {
 class DetailViewController: UIViewController, UIGestureRecognizerDelegate {
 
     var presenter: DetailPresentation!
-    var food: Food!
+    var foodDetail: FoodDetail!
     private let cellIdentifier = "DetailTableViewCell"
     private var tapGestureRecognizer : UITapGestureRecognizer!
 
@@ -43,7 +43,7 @@ class DetailViewController: UIViewController, UIGestureRecognizerDelegate {
 
         let foodQt: Double = gramTextField.text! == "" ? 100 : Double(gramTextField.text!)!
 
-        presenter.addButtonTapped(food: food, foodQt: foodQt, eatDate: eatDatePicker.date)
+        presenter.addButtonTapped(foodDetail: foodDetail, foodQt: foodQt, eatDate: eatDatePicker.date)
     }
 
     //
@@ -92,20 +92,20 @@ class DetailViewController: UIViewController, UIGestureRecognizerDelegate {
 }
 
 extension DetailViewController: DetailView {
-    func updateLabels(food: Food) {
-        self.foodNameLabel.text = food.foodName
+    func updateLabels(foodDetail: FoodDetail) {
+        self.foodNameLabel.text = foodDetail.foodName
     }
 
-    func updateData(food: Food) {
-        self.food = food
+    func updateData(foodDetail: FoodDetail) {
+        self.foodDetail = foodDetail
     }
 
     func closeDetail() {
         self.navigationController?.popViewController(animated: true)
     }
 
-    func updateNutritions(nutritions: [FoodNutrition]) {
-        food.nutritions = nutritions
+    func updateNutritions(nutritions: [Nutrition]) {
+        foodDetail.nutritions = nutritions
         tableView.reloadData()
     }
 
@@ -129,12 +129,12 @@ extension DetailViewController: DetailView {
 
 extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        food.nutritions.count
+        return 0 //food.nutritions.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! DetailTableViewCell
-        cell.setupCell(nutrition: food.nutritions[indexPath.row])
+//        cell.setupCell(nutrition: food.nutritions[indexPath.row])
 
         return cell
     }

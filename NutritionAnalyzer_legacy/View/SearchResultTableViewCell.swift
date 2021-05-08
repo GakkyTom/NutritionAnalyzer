@@ -18,8 +18,8 @@ class SearchResultTableViewCell: UITableViewCell {
 
     func setupCell(food: Food) {
         self.foodNameLabel.text = food.foodName
-        self.proteinQuantityLabel.text = food.getNutritionValueOf(.protein).description
-        self.fatQuantityLabel.text = food.getNutritionValueOf(.fat).description
-        self.carboQuantityLabel.text = food.getNutritionValueOf(.carbohydrate).description
+//        self.proteinQuantityLabel.text = food.getNutritionValueOf(.protein).description
+//        self.fatQuantityLabel.text = food.getNutritionValueOf(.fat).description
+//        self.carboQuantityLabel.text = food.getNutritionValueOf(.carbohydrate).description
     }
 }

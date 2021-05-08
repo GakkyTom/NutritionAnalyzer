@@ -9,7 +9,7 @@ import Foundation
 
 protocol DetailPresentation: AnyObject {
     func viewDidLoad()
-    func addButtonTapped(food: Food, foodQt: Double, eatDate: Date)
+    func addButtonTapped(foodDetail: FoodDetail, foodQt: Double, eatDate: Date)
     func calcButtonTapped(foodQt: Double)
 }
 
@@ -17,40 +17,39 @@ class DetailPresenter {
     private weak var view: DetailView?
     private let router: DetailWireframe
     private let searchFoodInteractor: FoodUsecase
-    private let food: Food
-    private var calcedFood: Food
+    private let foodId: Int
 
     init(view: DetailView,
          router: DetailWireframe,
          searchFoodInteractor: FoodUsecase,
-         food: Food) {
+         foodId: Int) {
         self.view = view
         self.router = router
         self.searchFoodInteractor = searchFoodInteractor
-        self.food = food
-        self.calcedFood = food
+        self.foodId = foodId
     }
 }
 
 extension DetailPresenter: DetailPresentation {
     func viewDidLoad() {
-        view?.updateLabels(food: food)
-        view?.updateData(food: food)
+        let foodDetail = searchFoodInteractor.getFoodDetailBy(foodId: foodId)
+        view?.updateLabels(foodDetail: foodDetail)
+        view?.updateData(foodDetail: foodDetail)
         view?.setupTableView()
         view?.setupKeyboard()
         view?.setupGestureRecognizer()
     }
 
-    func addButtonTapped(food: Food, foodQt: Double, eatDate: Date) {
-        searchFoodInteractor.insert(food: food, foodQt: foodQt, eatDate: eatDate)
+    func addButtonTapped(foodDetail: FoodDetail, foodQt: Double, eatDate: Date) {
+//        searchFoodInteractor.insert(foodDetail: foodDetail, foodQt: foodQt, eatDate: eatDate)
         view?.closeDetail()
     }
 
     func calcButtonTapped(foodQt: Double) {
-        let calcedNutritions = food.nutritions.map {
-            FoodNutrition(foodIndex: food.index, nutritionName: $0.nutritionName, value: $0.value * foodQt / 100)
-        }
+//        let calcedNutritions = food.nutritions.map {
+//            FoodNutrition(foodIndex: food.index, nutritionName: $0.nutritionName, value: $0.value * foodQt / 100)
+//        }
 
-        view?.updateNutritions(nutritions: calcedNutritions)
+//        view?.updateNutritions(nutritions: calcedNutritions)
     }
 }

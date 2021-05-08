@@ -10,8 +10,8 @@ import Foundation
 protocol HomePresentation: AnyObject {
     func viewDidLoad()
     func refreshView(periodStart: Date)
-    func getUserNutrition() -> [Nutrition]
-    func getUserNutritionOf(_ index: Int) -> Nutrition
+    func getUserNutritions() -> [UserNutrition]
+    func getUserNutritionOf(_ index: Int) -> UserNutrition
 }
 
 class HomePresenter {
@@ -48,19 +48,19 @@ extension HomePresenter: HomePresentation {
         view?.setupLabels(periodLabel: periodString)
     }
 
-    func getUserNutrition() -> [Nutrition] {
-        var nutritions: [Nutrition] = []
+    func getUserNutritions() -> [UserNutrition] {
+        var nutritions: [UserNutrition] = []
         NutritionName.allCases.forEach { nutritionName in
             let nutritionValue = nutritionInteractor.sumupBy(nutritionName)
-            let nutrition = Nutrition(nutritionName: nutritionName.rawValue, value: nutritionValue)
+            let nutrition = UserNutrition(nutritionId: nutritionName.id, nutritionName: nutritionName.rawValue, nutritionValue: nutritionValue)
             nutritions.append(nutrition)
         }
 
         return nutritions
     }
 
-    func getUserNutritionOf(_ index: Int) -> Nutrition {
-        let nutrition = getUserNutrition()
+    func getUserNutritionOf(_ index: Int) -> UserNutrition {
+        let nutrition = getUserNutritions()
         return nutrition[index]
     }
 }

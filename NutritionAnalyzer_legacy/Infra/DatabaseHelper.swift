@@ -11,8 +11,7 @@ import GRDB
 class DatabaseHelper {
     static let DB_FILE_NAME = "nutrition_analyzer.db"
 
-    let databaseFile = NSTemporaryDirectory() + "database.db" // try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
-//    private let databaseFile = NSHomeDirectory() + "/Documents/" + DB_FILE_NAME
+    let databaseFile = NSTemporaryDirectory() + "database.db"
     private var dbQueue: DatabaseQueue?
 
     /// データベースの操作
@@ -31,7 +30,10 @@ class DatabaseHelper {
 
     func createDatabase() {
         let result = inDatabase { (db) in
-            try UserFood.create(db)
+            try FoodTable.create(db)
+            try FoodNutritionTable.create(db)
+            try UserNutritionTable.create(db)
+            try UserFoodTable.create(db)
         }
 
         if !result {

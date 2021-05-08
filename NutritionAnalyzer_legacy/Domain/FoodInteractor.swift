@@ -8,9 +8,9 @@
 import Foundation
 
 protocol FoodUsecase: AnyObject {
-    func initializeDB()
     func refresh()
-    func getFoodBy(_ name: String) -> [Food]
+    func getFoodBy(name: String) -> [Food]
+    func getFoodDetailBy(foodId: Int) -> FoodDetail
     func add(food: Food)
     func insert(food: Food, foodQt: Double, eatDate: Date)
     func isExistsUserData() -> Bool
@@ -31,39 +31,39 @@ class FoodInteractor {
 }
 
 extension FoodInteractor: FoodUsecase {
-    func initializeDB() {
-        refresh()
-        helper.createDatabase()
-
-        self.delete()
-    }
-
     func refresh() {
+        self.delete()
+
         guard let data = try? getJSONData() else { return }
         dataSource = try! JSONDecoder().decode([Food].self, from: data)
     }
 
-    func getFoodBy(_ name: String) -> [Food] {
+    func getFoodBy(name: String) -> [Food] {
         dataSource.filter { (nutrition) -> Bool in
             nutrition.foodName.contains(name)
         }
+    }
+
+    // TODO: ダミー返しているので後で修正
+    func getFoodDetailBy(foodId: Int) -> FoodDetail {
+        return FoodDetail(foodName: "Test", nutritions: [Nutrition(nutritionName: "test nutrition", nutritionValue: 0.0)])
     }
 
     func add(food: Food) {
         userData.append(food)
     }
 
-    func insert(food: Food, foodQt: Float, eatDate: Date) {
-        helper.inDatabase { (db) in
-            var entity = createUserPFC(food: food, foodQt: foodQt, eatDate: eatDate)
-            try entity.insert(db)
-        }
+    func insert(food: Food, foodQt: Double, eatDate: Date) {
+//        helper.inDatabase { (db) in
+//            var entity = createUserPFC(food: food, foodQt: foodQt, eatDate: eatDate)
+//            try entity.insert(db)
+//        }
     }
 
     func isExistsUserData() -> Bool {
-        var result: [UserFood] = []
+        var result: [UserFoodTable] = []
         helper.inDatabase { (db) in
-            result = try UserFood.fetchAll(db)
+            result = try UserFoodTable.fetchAll(db)
         }
 
         return !result.isEmpty
@@ -71,17 +71,17 @@ extension FoodInteractor: FoodUsecase {
 
     func delete() {
         helper.inDatabase { (db) in
-            try UserFood.deleteAll(db)
+            try UserFoodTable.deleteAll(db)
         }
     }
 
-    private func createUserPFC(food: Food, foodQt: Double, eatDate: Date) -> UserFood {
-        return UserFood(foodId: food.index,
-                       foodName: food.foodName,
-                       protein: food.getNutritionValueOf(.protein),
-                       fat: food.getNutritionValueOf(.fat),
-                       carbohydrate: food.getNutritionValueOf(.carbohydrate),
-                       foodQt: foodQt,
-                       eatDate: eatDate)
-    }
+//    private func createUserPFC(food: Food, foodQt: Double, eatDate: Date) -> UserFood {
+//        return UserFood(foodId: food.index,
+//                       foodName: food.foodName,
+//                       protein: food.getNutritionValueOf(.protein),
+//                       fat: food.getNutritionValueOf(.fat),
+//                       carbohydrate: food.getNutritionValueOf(.carbohydrate),
+//                       foodQt: foodQt,
+//                       eatDate: eatDate)
+//    }
 }

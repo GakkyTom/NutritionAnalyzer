@@ -17,12 +17,16 @@ class UserFoodInteractor {
 
 extension UserFoodInteractor: UserFoodUsecase {
     func fetchAll() -> [UserFood] {
-        var result: [UserFood] = []
+        var userFoods: [UserFood] = []
 
         helper.inDatabase { (db) in
-            result = try UserFood.fetchAll(db)  // 期間で絞る
+            let result = try UserFoodTable.fetchAll(db)  // 期間で絞る
+            result.forEach { res in
+                let userFood = UserFood(foodName: res.foodName, eatDate: res.eatDate, foodQt: res.foodQt)
+                userFoods.append(userFood)
+            }
         }
 
-        return result
+        return userFoods
     }
 }

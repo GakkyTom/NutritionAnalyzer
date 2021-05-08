@@ -13,13 +13,14 @@ class DetailTableViewCell: UITableViewCell {
     @IBOutlet weak var nutritionValueLabel: UILabel!
 
     static let cellHeight: CGFloat = 30
+    var nutritionId: Int?
 
-    func setupCell(nutrition: Nutrition) {
+    func setupCell(nutrition: UserNutrition) {
         self.nutritionNameLabel.text = nutrition.nutritionName
-        self.nutritionValueLabel.text = nutrition.value.description
+        self.nutritionValueLabel.text = nutrition.nutritionValue.description
     }
 
     func reCalcCell(nutrition: Nutrition, g: Double) {
-        self.nutritionValueLabel.text = (nutrition.value * g / 100).description
+        self.nutritionValueLabel.text = (nutrition.nutritionValue * g / 100).description
     }
 }

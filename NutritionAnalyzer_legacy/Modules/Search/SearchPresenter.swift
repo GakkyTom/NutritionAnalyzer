@@ -10,7 +10,7 @@ import Foundation
 protocol SearchPresentation: AnyObject {
     func viewDidLoad()
     func searchButtonTapped(_ foodName: String)
-    func didSelectRow(food: Food)
+    func didSelectRow(foodId: Int)
 }
 
 class SearchPresenter {
@@ -29,17 +29,17 @@ class SearchPresenter {
 
 extension SearchPresenter: SearchPresentation {
     func viewDidLoad() {
-        searchFoodInteractor.initializeDB()
+        searchFoodInteractor.refresh()
 
         view?.updateTableView(data: searchFoodInteractor.dataSource)
     }
 
     func searchButtonTapped(_ foodName: String) {
-        let data = searchFoodInteractor.getFoodBy(foodName)
+        let data = searchFoodInteractor.getFoodBy(name: foodName)
         view?.updateTableView(data: data)
     }
 
-    func didSelectRow(food: Food) {
-        router.showDetailOf(food)
+    func didSelectRow(foodId: Int) {
+        router.showDetailOf(foodId)
     }
 }

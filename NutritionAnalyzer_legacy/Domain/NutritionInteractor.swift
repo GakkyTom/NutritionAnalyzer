@@ -9,6 +9,7 @@ import Foundation
 
 protocol NutritionUsecase {
     func sumupBy(_ nutritionName: NutritionName) -> Double
+    func getNutritionOf(_ foodId: Int) -> [Nutrition]?
 }
 
 class  NutritionInteractor {
@@ -16,7 +17,7 @@ class  NutritionInteractor {
 }
 
 extension NutritionInteractor: NutritionUsecase {
-    // 全部の栄養素のSumをUserNutrition型で返却する
+    // ユーザーの栄養素のSumを返却する
     func sumupBy(_ nutritionName: NutritionName) -> Double {
         var result = 0.0
         helper.inDatabase { (db) in
@@ -24,7 +25,7 @@ extension NutritionInteractor: NutritionUsecase {
                 SELECT
                 SUM(\(nutritionName.rawValue))
                 FROM
-                \(UserFood.databaseTableName)
+                \(UserFoodTable.databaseTableName)
             """
 
             do {
@@ -37,12 +38,16 @@ extension NutritionInteractor: NutritionUsecase {
         return result
     }
 
-    func getNutritionOf(_ foodId: Int) -> FoodNutrition? {
-        var result: FoodNutrition?
+    func getNutritionOf(_ foodId: Int) -> [Nutrition]? {
+        var nutritions: [Nutrition]?
         helper.inDatabase { (db) in
-            result = try FoodNutrition.filter(sql: "id = \(foodId)").fetchOne(db)
+            let result = try FoodNutritionTable.filter(sql: "id = \(foodId)").fetchAll(db)
+            result.forEach { res in
+                let nutrition = Nutrition(nutritionName: res.nutritionName, nutritionValue: res.value)
+                nutritions?.append(nutrition)
+            }
         }
 
-        return result
+        return nutritions
     }
 }
