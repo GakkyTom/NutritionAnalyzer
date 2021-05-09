@@ -13,9 +13,7 @@ protocol FoodUsecase: AnyObject {
     func getFoodBy(name: String) -> [Food]
     func getFoodDetailBy(foodId: Int) -> FoodDetail?
     func add(food: Food)
-    func insert(foodDetail: FoodDetail, foodQt: Double, eatDate: Date)
     func isExistsFoodData() -> Bool
-    func delete()
 }
 
 class FoodInteractor {
@@ -33,11 +31,13 @@ class FoodInteractor {
     private func initFoodTable() {
         dataSource.forEach { food in
             helper.inDatabase { (db) in
+                print("initializing food: \(food)")
                 var foodEntity = FoodTable(foodId: food.foodId, category: food.category, foodNumber: food.foodNumber, foodName: food.foodName)
 
                 try foodEntity.insert(db)
 
-                try food.nutritions.forEach { nutrition in
+                try food.nutritions!.forEach { nutrition in
+
                     var nutritionEntity = FoodNutritionTable(foodId: food.foodId, nutritionName: nutrition.nutritionName, value: nutrition.value)
                     try nutritionEntity.insert(db)
                 }
@@ -48,20 +48,27 @@ class FoodInteractor {
 
 extension FoodInteractor: FoodUsecase {
     func refresh() {
-        self.delete()
-
         guard let data = try? getJSONData() else { return }
         dataSource = try! JSONDecoder().decode([Food].self, from: data)
 
         if !isExistsFoodData() {
             initFoodTable()
+        } else {
+            print("db already exists")
         }
     }
 
     func getFoodBy(name: String) -> [Food] {
-        dataSource.filter { (nutrition) -> Bool in
-            nutrition.foodName.contains(name)
+        var foods: [Food] = []
+        helper.inDatabase { (db) in
+            let result = try! FoodTable.filter(Column("foodName").like("%\(name)%")).fetchAll(db)
+            result.forEach { (res) in
+                let food = Food(foodId: res.foodId, category: res.category, foodNumber: res.foodNumber, foodName: res.foodName)
+                foods.append(food)
+            }
         }
+
+        return foods
     }
 
     func getFoodDetailBy(foodId: Int) -> FoodDetail? {
@@ -89,13 +96,6 @@ extension FoodInteractor: FoodUsecase {
         userData.append(food)
     }
 
-    // UserFoodへの登録
-    func insert(foodDetail: FoodDetail, foodQt: Double, eatDate: Date) {
-        helper.inDatabase { (db) in
-            var entity = UserFoodTable(userFoodId: nil, foodId: foodDetail.foodId, foodName: foodDetail.foodName, foodQt: foodQt, eatDate: eatDate)
-            try entity.insert(db)
-        }
-    }
 
     func isExistsFoodData() -> Bool {
         var result: [FoodTable] = []
@@ -104,11 +104,5 @@ extension FoodInteractor: FoodUsecase {
         }
 
         return !result.isEmpty
-    }
-
-    func delete() {
-        helper.inDatabase { (db) in
-            try UserFoodTable.deleteAll(db)
-        }
     }
 }

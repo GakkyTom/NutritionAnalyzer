@@ -23,11 +23,13 @@ class DetailRouter {
         let view = DetailViewController()
         let router = DetailRouter(viewController: view)
         let foodInteractor = FoodInteractor()
+        let userFoodInteractor = UserFoodInteractor()
 
         let presenter = DetailPresenter(
             view: view,
             router: router,
             foodInteractor: foodInteractor,
+            userFoodInteractor: userFoodInteractor,
             foodId: foodId
         )
 

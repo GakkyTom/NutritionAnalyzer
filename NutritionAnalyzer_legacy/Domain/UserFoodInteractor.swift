@@ -9,6 +9,8 @@ import Foundation
 
 protocol UserFoodUsecase: AnyObject {
     func fetchAll() -> [UserFood]
+    func insert(foodDetail: FoodDetail, foodQt: Double, eatDate: Date)
+    func isExistsUserFood() -> Bool
 }
 
 class UserFoodInteractor {
@@ -28,5 +30,23 @@ extension UserFoodInteractor: UserFoodUsecase {
         }
 
         return userFoods
+    }
+
+    // UserFoodへの登録
+    func insert(foodDetail: FoodDetail, foodQt: Double, eatDate: Date) {
+        helper.inDatabase { (db) in
+            var entity = UserFoodTable(userFoodId: nil, foodId: foodDetail.foodId, foodName: foodDetail.foodName, foodQt: foodQt, eatDate: eatDate)
+            try entity.insert(db)
+        }
+    }
+
+    func isExistsUserFood() -> Bool {
+        var result: [UserFoodTable] = []
+        helper.inDatabase { (db) in
+            result = try UserFoodTable.fetchAll(db)
+        }
+
+        return !result.isEmpty
+
     }
 }

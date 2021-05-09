@@ -11,7 +11,7 @@ import GRDB
 class DatabaseHelper {
     static let DB_FILE_NAME = "nutrition_analyzer.db"
 
-    let databaseFile = NSTemporaryDirectory() + "database.db"
+    let databaseFile = NSHomeDirectory() + "/Documents/" + "database.db"
     private var dbQueue: DatabaseQueue?
 
     /// データベースの操作

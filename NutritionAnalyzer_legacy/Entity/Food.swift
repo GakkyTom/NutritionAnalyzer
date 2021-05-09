@@ -12,5 +12,5 @@ struct Food : Codable {
     var category: String
     var foodNumber: String
     var foodName: String
-    var nutritions: [Nutrition]
+    var nutritions: [Nutrition]?
 }

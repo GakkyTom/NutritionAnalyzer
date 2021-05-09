@@ -17,15 +17,18 @@ class DetailPresenter {
     private weak var view: DetailView?
     private let router: DetailWireframe
     private let foodInteractor: FoodUsecase
+    private let userFoodInteractor: UserFoodInteractor
     private let foodId: Int
 
     init(view: DetailView,
          router: DetailWireframe,
          foodInteractor: FoodUsecase,
+         userFoodInteractor: UserFoodInteractor,
          foodId: Int) {
         self.view = view
         self.router = router
         self.foodInteractor = foodInteractor
+        self.userFoodInteractor = userFoodInteractor
         self.foodId = foodId
     }
 }
@@ -43,7 +46,7 @@ extension DetailPresenter: DetailPresentation {
     }
 
     func addButtonTapped(foodDetail: FoodDetail, foodQt: Double, eatDate: Date) {
-        foodInteractor.insert(foodDetail: foodDetail, foodQt: foodQt, eatDate: eatDate)
+        userFoodInteractor.insert(foodDetail: foodDetail, foodQt: foodQt, eatDate: eatDate)
         view?.closeDetail()
     }
 
