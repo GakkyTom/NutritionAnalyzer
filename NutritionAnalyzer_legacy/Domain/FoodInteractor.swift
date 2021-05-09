@@ -1,5 +1,5 @@
 //
-//  SearchFoodInteractor.swift
+//  FoodInteractor.swift
 //  NutritionAnalyzer_legacy
 //
 //  Created by 板垣智也 on 2021/04/21.
@@ -12,7 +12,7 @@ protocol FoodUsecase: AnyObject {
     func getFoodBy(name: String) -> [Food]
     func getFoodDetailBy(foodId: Int) -> FoodDetail
     func add(food: Food)
-    func insert(food: Food, foodQt: Double, eatDate: Date)
+    func insert(foodDetail: FoodDetail, foodQt: Double, eatDate: Date)
     func isExistsUserData() -> Bool
     func delete()
 }
@@ -46,18 +46,19 @@ extension FoodInteractor: FoodUsecase {
 
     // TODO: ダミー返しているので後で修正
     func getFoodDetailBy(foodId: Int) -> FoodDetail {
-        return FoodDetail(foodName: "Test", nutritions: [Nutrition(nutritionName: "test nutrition", nutritionValue: 0.0)])
+        return FoodDetail(foodId: 0, foodName: "Test", nutritions: [Nutrition(nutritionName: "test nutrition", nutritionValue: 0.0)])
     }
 
     func add(food: Food) {
         userData.append(food)
     }
 
-    func insert(food: Food, foodQt: Double, eatDate: Date) {
-//        helper.inDatabase { (db) in
-//            var entity = createUserPFC(food: food, foodQt: foodQt, eatDate: eatDate)
-//            try entity.insert(db)
-//        }
+    // UserFoodへの登録
+    func insert(foodDetail: FoodDetail, foodQt: Double, eatDate: Date) {
+        helper.inDatabase { (db) in
+            var entity = UserFoodTable(userFoodId: nil, foodId: foodDetail.foodId, foodName: foodDetail.foodName, foodQt: foodQt, eatDate: eatDate)
+            try entity.insert(db)
+        }
     }
 
     func isExistsUserData() -> Bool {

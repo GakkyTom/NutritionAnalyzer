@@ -9,7 +9,7 @@ import GRDB
 
 // ユーザの登録した食材
 struct UserFoodTable : Codable, FetchableRecord, MutablePersistableRecord {
-    var userFoodId: Int     // 当UserFoodのID
+    var userFoodId: Int?     // 当UserFoodのID
     var foodId: Int         // 食材ID
     var foodName: String    // 食材名
     var foodQt: Double      // 食材の量（Quantity）
@@ -27,5 +27,9 @@ struct UserFoodTable : Codable, FetchableRecord, MutablePersistableRecord {
             t.column("foodQt", .double).notNull()
             t.column("eatDate", .date).notNull()
         })
+    }
+
+    mutating func didInsert(with rowID: Int, for column: String?) {
+        userFoodId = rowID
     }
 }

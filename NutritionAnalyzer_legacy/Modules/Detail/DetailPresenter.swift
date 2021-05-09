@@ -16,23 +16,23 @@ protocol DetailPresentation: AnyObject {
 class DetailPresenter {
     private weak var view: DetailView?
     private let router: DetailWireframe
-    private let searchFoodInteractor: FoodUsecase
+    private let foodInteractor: FoodUsecase
     private let foodId: Int
 
     init(view: DetailView,
          router: DetailWireframe,
-         searchFoodInteractor: FoodUsecase,
+         foodInteractor: FoodUsecase,
          foodId: Int) {
         self.view = view
         self.router = router
-        self.searchFoodInteractor = searchFoodInteractor
+        self.foodInteractor = foodInteractor
         self.foodId = foodId
     }
 }
 
 extension DetailPresenter: DetailPresentation {
     func viewDidLoad() {
-        let foodDetail = searchFoodInteractor.getFoodDetailBy(foodId: foodId)
+        let foodDetail = foodInteractor.getFoodDetailBy(foodId: foodId)
         view?.updateLabels(foodDetail: foodDetail)
         view?.updateData(foodDetail: foodDetail)
         view?.setupTableView()
@@ -41,7 +41,7 @@ extension DetailPresenter: DetailPresentation {
     }
 
     func addButtonTapped(foodDetail: FoodDetail, foodQt: Double, eatDate: Date) {
-//        searchFoodInteractor.insert(foodDetail: foodDetail, foodQt: foodQt, eatDate: eatDate)
+        foodInteractor.insert(foodDetail: foodDetail, foodQt: foodQt, eatDate: eatDate)
         view?.closeDetail()
     }
 

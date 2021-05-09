@@ -14,7 +14,7 @@ struct FoodNutritionTable : Codable, FetchableRecord, MutablePersistableRecord {
     var value: Double
 
     static var databaseTableName: String {
-        return "tbl_food"
+        return "tbl_food_nutrition"
     }
 
     static func create(_ db: Database) throws {

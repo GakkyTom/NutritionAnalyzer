@@ -8,6 +8,7 @@
 import Foundation
 
 struct FoodDetail {
+    var foodId: Int
     var foodName: String
     var nutritions: [Nutrition]
 }

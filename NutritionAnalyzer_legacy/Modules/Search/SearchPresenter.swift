@@ -16,26 +16,26 @@ protocol SearchPresentation: AnyObject {
 class SearchPresenter {
     private weak var view: SearchView?
     private let router: SearchWireframe
-    private let searchFoodInteractor: FoodInteractor
+    private let foodInteractor: FoodInteractor
 
     init(view: SearchView,
          router: SearchWireframe,
-         searchFoodInteractor: FoodInteractor) {
+         foodInteractor: FoodInteractor) {
         self.view = view
         self.router = router
-        self.searchFoodInteractor = searchFoodInteractor
+        self.foodInteractor = foodInteractor
     }
 }
 
 extension SearchPresenter: SearchPresentation {
     func viewDidLoad() {
-        searchFoodInteractor.refresh()
+        foodInteractor.refresh()
 
-        view?.updateTableView(data: searchFoodInteractor.dataSource)
+        view?.updateTableView(data: foodInteractor.dataSource)
     }
 
     func searchButtonTapped(_ foodName: String) {
-        let data = searchFoodInteractor.getFoodBy(name: foodName)
+        let data = foodInteractor.getFoodBy(name: foodName)
         view?.updateTableView(data: data)
     }
 
