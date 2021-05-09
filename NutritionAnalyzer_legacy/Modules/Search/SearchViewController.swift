@@ -102,7 +102,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        presenter.didSelectRow(foodId: data[indexPath.row].index)
+        presenter.didSelectRow(foodId: data[indexPath.row].foodId)
 
         tableView.deselectRow(at: indexPath, animated: true)
     }

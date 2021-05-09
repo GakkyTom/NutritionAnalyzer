@@ -15,12 +15,12 @@ class DetailTableViewCell: UITableViewCell {
     static let cellHeight: CGFloat = 30
     var nutritionId: Int?
 
-    func setupCell(nutrition: UserNutrition) {
+    func setupCell(nutrition: Nutrition) {
         self.nutritionNameLabel.text = nutrition.nutritionName
-        self.nutritionValueLabel.text = nutrition.nutritionValue.description
+        self.nutritionValueLabel.text = nutrition.value.description
     }
 
     func reCalcCell(nutrition: Nutrition, g: Double) {
-        self.nutritionValueLabel.text = (nutrition.nutritionValue * g / 100).description
+        self.nutritionValueLabel.text = (nutrition.value * g / 100).description
     }
 }

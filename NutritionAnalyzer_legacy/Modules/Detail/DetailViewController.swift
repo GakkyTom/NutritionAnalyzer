@@ -129,12 +129,12 @@ extension DetailViewController: DetailView {
 
 extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0 //food.nutritions.count
+        foodDetail.nutritions.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! DetailTableViewCell
-//        cell.setupCell(nutrition: food.nutritions[indexPath.row])
+        cell.setupCell(nutrition: foodDetail.nutritions[indexPath.row])
 
         return cell
     }

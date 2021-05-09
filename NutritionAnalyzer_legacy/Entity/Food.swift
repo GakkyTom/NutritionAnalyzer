@@ -8,8 +8,9 @@
 import Foundation
 
 struct Food : Codable {
+    var foodId: Int
     var category: String
     var foodNumber: String
-    var index: Int          // 他ではfoodIdと合致
     var foodName: String
+    var nutritions: [Nutrition]
 }

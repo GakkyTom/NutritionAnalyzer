@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct Nutrition {
+struct Nutrition: Codable {
+    var foodId: Int
     var nutritionName: String
-    var nutritionValue: Double
+    var value: Double
 }

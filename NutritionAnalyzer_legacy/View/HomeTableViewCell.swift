@@ -22,8 +22,8 @@ class HomeTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
-    func setupCell(vo: UserNutrition) {
-        nutritionNameLabel.text = vo.nutritionName
-        nutritionValueLabel.text = vo.nutritionValue.description
+    func setupCell(nutrition: UserNutrition) {
+        nutritionNameLabel.text = nutrition.nutritionName
+        nutritionValueLabel.text = nutrition.nutritionValue.description
     }
 }

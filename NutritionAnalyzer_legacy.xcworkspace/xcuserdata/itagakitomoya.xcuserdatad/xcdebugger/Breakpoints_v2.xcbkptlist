@@ -7,49 +7,65 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "3BE46C1E-48FB-4143-9C9C-773CFB8A130B"
+            uuid = "0E343CB8-E2A9-4DE2-BEEA-3E48069771E1"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "NutritionAnalyzer_legacy/Infra/DatabaseHelper.swift"
+            filePath = "NutritionAnalyzer_legacy/Domain/FoodInteractor.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "createDatabase()"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
+            landmarkName = "getFoodDetailBy(foodId:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "8086D203-DA5F-449D-BD79-52815CF40D4B"
+            uuid = "C5217F01-31AD-4F94-A2C8-D4449D27263C"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "NutritionAnalyzer_legacy/Infra/DatabaseHelper.swift"
+            filePath = "NutritionAnalyzer_legacy/Domain/FoodInteractor.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
-            landmarkName = "inDatabase(_:)"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "initFoodTable()"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "D28C2DE8-A8B7-43D7-8F6B-5245CA271054"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "NutritionAnalyzer_legacy/Infra/DatabaseHelper.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
-            landmarkName = "createDatabase()"
-            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C5217F01-31AD-4F94-A2C8-D4449D27263C - 28077189830c6ad0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (GRDB.Database) throws -&gt; () in closure #1 (NutritionAnalyzer_legacy.Food) -&gt; () in NutritionAnalyzer_legacy.FoodInteractor.(initFoodTable in _F0349ADAE32AAB6B63138A4D0FEBD99E)() -&gt; ()"
+                  moduleName = "NutritionAnalyzer_legacy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itagakitomoya/Documents/SelfStudy/NutritionAnalyzer_legacy/NutritionAnalyzer_legacy/Domain/FoodInteractor.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "651">
+               </Location>
+               <Location
+                  uuid = "C5217F01-31AD-4F94-A2C8-D4449D27263C - 588d99713cd0c28a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (NutritionAnalyzer_legacy.Nutrition) throws -&gt; () in closure #1 (GRDB.Database) throws -&gt; () in closure #1 (NutritionAnalyzer_legacy.Food) -&gt; () in NutritionAnalyzer_legacy.FoodInteractor.(initFoodTable in _F0349ADAE32AAB6B63138A4D0FEBD99E)() -&gt; ()"
+                  moduleName = "NutritionAnalyzer_legacy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itagakitomoya/Documents/SelfStudy/NutritionAnalyzer_legacy/NutritionAnalyzer_legacy/Domain/FoodInteractor.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "73">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

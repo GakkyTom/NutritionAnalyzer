@@ -6,14 +6,15 @@
 //
 
 import Foundation
+import GRDB
 
 protocol FoodUsecase: AnyObject {
     func refresh()
     func getFoodBy(name: String) -> [Food]
-    func getFoodDetailBy(foodId: Int) -> FoodDetail
+    func getFoodDetailBy(foodId: Int) -> FoodDetail?
     func add(food: Food)
     func insert(foodDetail: FoodDetail, foodQt: Double, eatDate: Date)
-    func isExistsUserData() -> Bool
+    func isExistsFoodData() -> Bool
     func delete()
 }
 
@@ -28,6 +29,21 @@ class FoodInteractor {
 
         return try Data(contentsOf: url)
     }
+
+    private func initFoodTable() {
+        dataSource.forEach { food in
+            helper.inDatabase { (db) in
+                var foodEntity = FoodTable(foodId: food.foodId, category: food.category, foodNumber: food.foodNumber, foodName: food.foodName)
+
+                try foodEntity.insert(db)
+
+                try food.nutritions.forEach { nutrition in
+                    var nutritionEntity = FoodNutritionTable(foodId: food.foodId, nutritionName: nutrition.nutritionName, value: nutrition.value)
+                    try nutritionEntity.insert(db)
+                }
+            }
+        }
+    }
 }
 
 extension FoodInteractor: FoodUsecase {
@@ -36,6 +52,10 @@ extension FoodInteractor: FoodUsecase {
 
         guard let data = try? getJSONData() else { return }
         dataSource = try! JSONDecoder().decode([Food].self, from: data)
+
+        if !isExistsFoodData() {
+            initFoodTable()
+        }
     }
 
     func getFoodBy(name: String) -> [Food] {
@@ -44,9 +64,25 @@ extension FoodInteractor: FoodUsecase {
         }
     }
 
-    // TODO: ダミー返しているので後で修正
-    func getFoodDetailBy(foodId: Int) -> FoodDetail {
-        return FoodDetail(foodId: 0, foodName: "Test", nutritions: [Nutrition(nutritionName: "test nutrition", nutritionValue: 0.0)])
+    func getFoodDetailBy(foodId: Int) -> FoodDetail? {
+        var result: FoodDetail?
+        helper.inDatabase { (db) in
+            let food = try! FoodTable.filter(sql: "foodId = \(foodId)").fetchAll(db)
+
+            let foodName = food[0].foodName
+
+            let foodDetail = try FoodNutritionTable.filter(sql: "foodId = \(foodId)").fetchAll(db)
+
+            var nutritions: [Nutrition] = []
+            foodDetail.forEach { res in
+                let nutrition = Nutrition(foodId: res.foodId, nutritionName: res.nutritionName, value: res.value)
+                nutritions.append(nutrition)
+            }
+
+            result = FoodDetail(foodId: foodId, foodName: foodName, nutritions: nutritions)
+        }
+
+        return result
     }
 
     func add(food: Food) {
@@ -61,10 +97,10 @@ extension FoodInteractor: FoodUsecase {
         }
     }
 
-    func isExistsUserData() -> Bool {
-        var result: [UserFoodTable] = []
+    func isExistsFoodData() -> Bool {
+        var result: [FoodTable] = []
         helper.inDatabase { (db) in
-            result = try UserFoodTable.fetchAll(db)
+            result = try FoodTable.fetchAll(db)
         }
 
         return !result.isEmpty
@@ -75,14 +111,4 @@ extension FoodInteractor: FoodUsecase {
             try UserFoodTable.deleteAll(db)
         }
     }
-
-//    private func createUserPFC(food: Food, foodQt: Double, eatDate: Date) -> UserFood {
-//        return UserFood(foodId: food.index,
-//                       foodName: food.foodName,
-//                       protein: food.getNutritionValueOf(.protein),
-//                       fat: food.getNutritionValueOf(.fat),
-//                       carbohydrate: food.getNutritionValueOf(.carbohydrate),
-//                       foodQt: foodQt,
-//                       eatDate: eatDate)
-//    }
 }

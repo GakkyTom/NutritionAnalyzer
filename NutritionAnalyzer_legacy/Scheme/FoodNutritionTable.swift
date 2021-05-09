@@ -19,7 +19,8 @@ struct FoodNutritionTable : Codable, FetchableRecord, MutablePersistableRecord {
 
     static func create(_ db: Database) throws {
         try db.create(table: databaseTableName, body: { (t: TableDefinition) in
-            t.column("foodId", .integer).primaryKey(onConflict: .replace, autoincrement: false)
+            t.autoIncrementedPrimaryKey("foodNutritionId")
+            t.column("foodId", .integer).notNull()
             t.column("nutritionName", .integer).notNull()
             t.column("value", .text).notNull()
         })

@@ -43,7 +43,7 @@ extension NutritionInteractor: NutritionUsecase {
         helper.inDatabase { (db) in
             let result = try FoodNutritionTable.filter(sql: "id = \(foodId)").fetchAll(db)
             result.forEach { res in
-                let nutrition = Nutrition(nutritionName: res.nutritionName, nutritionValue: res.value)
+                let nutrition = Nutrition(foodId: res.foodId, nutritionName: res.nutritionName, value: res.value)
                 nutritions?.append(nutrition)
             }
         }

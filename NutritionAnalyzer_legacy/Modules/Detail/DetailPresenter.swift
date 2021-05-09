@@ -32,10 +32,12 @@ class DetailPresenter {
 
 extension DetailPresenter: DetailPresentation {
     func viewDidLoad() {
-        let foodDetail = foodInteractor.getFoodDetailBy(foodId: foodId)
+        guard let foodDetail = foodInteractor.getFoodDetailBy(foodId: foodId as Int) else { return }
+        
         view?.updateLabels(foodDetail: foodDetail)
         view?.updateData(foodDetail: foodDetail)
         view?.setupTableView()
+        view?.updateNutritions(nutritions: foodDetail.nutritions)
         view?.setupKeyboard()
         view?.setupGestureRecognizer()
     }
